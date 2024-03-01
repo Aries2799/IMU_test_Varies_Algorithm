@@ -1,5 +1,7 @@
 (cl:in-package imu_yesense_ros-msg)
-(cl:export '(ACC_X-VAL
+(cl:export '(HEADER-VAL
+          HEADER
+          ACC_X-VAL
           ACC_X
           ACC_Y-VAL
           ACC_Y

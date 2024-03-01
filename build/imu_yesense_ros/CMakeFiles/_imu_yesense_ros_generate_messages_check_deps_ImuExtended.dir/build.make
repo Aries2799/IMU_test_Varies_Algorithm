@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/zxy/IMU_test/build
 include imu_yesense_ros/CMakeFiles/_imu_yesense_ros_generate_messages_check_deps_ImuExtended.dir/progress.make
 
 imu_yesense_ros/CMakeFiles/_imu_yesense_ros_generate_messages_check_deps_ImuExtended:
-	cd /home/zxy/IMU_test/build/imu_yesense_ros && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py imu_yesense_ros /home/zxy/IMU_test/src/imu_yesense_ros/msg/ImuExtended.msg 
+	cd /home/zxy/IMU_test/build/imu_yesense_ros && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py imu_yesense_ros /home/zxy/IMU_test/src/imu_yesense_ros/msg/ImuExtended.msg std_msgs/Header
 
 _imu_yesense_ros_generate_messages_check_deps_ImuExtended: imu_yesense_ros/CMakeFiles/_imu_yesense_ros_generate_messages_check_deps_ImuExtended
 _imu_yesense_ros_generate_messages_check_deps_ImuExtended: imu_yesense_ros/CMakeFiles/_imu_yesense_ros_generate_messages_check_deps_ImuExtended.dir/build.make

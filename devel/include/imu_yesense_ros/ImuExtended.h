@@ -15,6 +15,7 @@
 #include <ros/builtin_message_traits.h>
 #include <ros/message_operations.h>
 
+#include <std_msgs/Header.h>
 
 namespace imu_yesense_ros
 {
@@ -24,7 +25,8 @@ struct ImuExtended_
   typedef ImuExtended_<ContainerAllocator> Type;
 
   ImuExtended_()
-    : acc_x(0.0)
+    : header()
+    , acc_x(0.0)
     , acc_y(0.0)
     , acc_z(0.0)
     , angular_velocity_roll(0.0)
@@ -35,7 +37,8 @@ struct ImuExtended_
     , angle_yaw(0.0)  {
     }
   ImuExtended_(const ContainerAllocator& _alloc)
-    : acc_x(0.0)
+    : header(_alloc)
+    , acc_x(0.0)
     , acc_y(0.0)
     , acc_z(0.0)
     , angular_velocity_roll(0.0)
@@ -48,6 +51,9 @@ struct ImuExtended_
     }
 
 
+
+   typedef  ::std_msgs::Header_<ContainerAllocator>  _header_type;
+  _header_type header;
 
    typedef double _acc_x_type;
   _acc_x_type acc_x;
@@ -105,7 +111,8 @@ return s;
 template<typename ContainerAllocator1, typename ContainerAllocator2>
 bool operator==(const ::imu_yesense_ros::ImuExtended_<ContainerAllocator1> & lhs, const ::imu_yesense_ros::ImuExtended_<ContainerAllocator2> & rhs)
 {
-  return lhs.acc_x == rhs.acc_x &&
+  return lhs.header == rhs.header &&
+    lhs.acc_x == rhs.acc_x &&
     lhs.acc_y == rhs.acc_y &&
     lhs.acc_z == rhs.acc_z &&
     lhs.angular_velocity_roll == rhs.angular_velocity_roll &&
@@ -146,22 +153,22 @@ struct IsMessage< ::imu_yesense_ros::ImuExtended_<ContainerAllocator> const>
 
 template <class ContainerAllocator>
 struct IsFixedSize< ::imu_yesense_ros::ImuExtended_<ContainerAllocator> >
-  : TrueType
+  : FalseType
   { };
 
 template <class ContainerAllocator>
 struct IsFixedSize< ::imu_yesense_ros::ImuExtended_<ContainerAllocator> const>
-  : TrueType
+  : FalseType
   { };
 
 template <class ContainerAllocator>
 struct HasHeader< ::imu_yesense_ros::ImuExtended_<ContainerAllocator> >
-  : FalseType
+  : TrueType
   { };
 
 template <class ContainerAllocator>
 struct HasHeader< ::imu_yesense_ros::ImuExtended_<ContainerAllocator> const>
-  : FalseType
+  : TrueType
   { };
 
 
@@ -170,12 +177,12 @@ struct MD5Sum< ::imu_yesense_ros::ImuExtended_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "2eb288617eb70de805bdc572560b798f";
+    return "b94728e8c9a2b6b4dbb2f39d36c69d58";
   }
 
   static const char* value(const ::imu_yesense_ros::ImuExtended_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x2eb288617eb70de8ULL;
-  static const uint64_t static_value2 = 0x05bdc572560b798fULL;
+  static const uint64_t static_value1 = 0xb94728e8c9a2b6b4ULL;
+  static const uint64_t static_value2 = 0xdbb2f39d36c69d58ULL;
 };
 
 template<class ContainerAllocator>
@@ -194,7 +201,8 @@ struct Definition< ::imu_yesense_ros::ImuExtended_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "float64 acc_x\n"
+    return "std_msgs/Header header\n"
+"float64 acc_x\n"
 "float64 acc_y\n"
 "float64 acc_z\n"
 "float64 angular_velocity_roll\n"
@@ -203,6 +211,22 @@ struct Definition< ::imu_yesense_ros::ImuExtended_<ContainerAllocator> >
 "float64 angle_roll\n"
 "float64 angle_pitch\n"
 "float64 angle_yaw\n"
+"\n"
+"================================================================================\n"
+"MSG: std_msgs/Header\n"
+"# Standard metadata for higher-level stamped data types.\n"
+"# This is generally used to communicate timestamped data \n"
+"# in a particular coordinate frame.\n"
+"# \n"
+"# sequence ID: consecutively increasing ID \n"
+"uint32 seq\n"
+"#Two-integer timestamp that is expressed as:\n"
+"# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')\n"
+"# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')\n"
+"# time-handling sugar is provided by the client library\n"
+"time stamp\n"
+"#Frame this data is associated with\n"
+"string frame_id\n"
 ;
   }
 
@@ -221,6 +245,7 @@ namespace serialization
   {
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
+      stream.next(m.header);
       stream.next(m.acc_x);
       stream.next(m.acc_y);
       stream.next(m.acc_z);
@@ -248,6 +273,9 @@ struct Printer< ::imu_yesense_ros::ImuExtended_<ContainerAllocator> >
 {
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::imu_yesense_ros::ImuExtended_<ContainerAllocator>& v)
   {
+    s << indent << "header: ";
+    s << std::endl;
+    Printer< ::std_msgs::Header_<ContainerAllocator> >::stream(s, indent + "  ", v.header);
     s << indent << "acc_x: ";
     Printer<double>::stream(s, indent + "  ", v.acc_x);
     s << indent << "acc_y: ";

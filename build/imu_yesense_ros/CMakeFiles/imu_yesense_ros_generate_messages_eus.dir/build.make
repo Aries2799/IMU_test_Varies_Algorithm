@@ -59,6 +59,7 @@ imu_yesense_ros/CMakeFiles/imu_yesense_ros_generate_messages_eus: /home/zxy/IMU_
 
 /home/zxy/IMU_test/devel/share/roseus/ros/imu_yesense_ros/msg/ImuExtended.l: /opt/ros/noetic/lib/geneus/gen_eus.py
 /home/zxy/IMU_test/devel/share/roseus/ros/imu_yesense_ros/msg/ImuExtended.l: /home/zxy/IMU_test/src/imu_yesense_ros/msg/ImuExtended.msg
+/home/zxy/IMU_test/devel/share/roseus/ros/imu_yesense_ros/msg/ImuExtended.l: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zxy/IMU_test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from imu_yesense_ros/ImuExtended.msg"
 	cd /home/zxy/IMU_test/build/imu_yesense_ros && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/zxy/IMU_test/src/imu_yesense_ros/msg/ImuExtended.msg -Iimu_yesense_ros:/home/zxy/IMU_test/src/imu_yesense_ros/msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p imu_yesense_ros -o /home/zxy/IMU_test/devel/share/roseus/ros/imu_yesense_ros/msg
 

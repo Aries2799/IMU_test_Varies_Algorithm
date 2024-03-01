@@ -6,12 +6,14 @@ python3 = True if sys.hexversion > 0x03000000 else False
 import genpy
 import struct
 
+import std_msgs.msg
 
 class ImuExtended(genpy.Message):
-  _md5sum = "2eb288617eb70de805bdc572560b798f"
+  _md5sum = "b94728e8c9a2b6b4dbb2f39d36c69d58"
   _type = "imu_yesense_ros/ImuExtended"
-  _has_header = False  # flag to mark the presence of a Header object
-  _full_text = """float64 acc_x
+  _has_header = True  # flag to mark the presence of a Header object
+  _full_text = """std_msgs/Header header
+float64 acc_x
 float64 acc_y
 float64 acc_z
 float64 angular_velocity_roll
@@ -20,9 +22,25 @@ float64 angular_velocity_yaw
 float64 angle_roll
 float64 angle_pitch
 float64 angle_yaw
+
+================================================================================
+MSG: std_msgs/Header
+# Standard metadata for higher-level stamped data types.
+# This is generally used to communicate timestamped data 
+# in a particular coordinate frame.
+# 
+# sequence ID: consecutively increasing ID 
+uint32 seq
+#Two-integer timestamp that is expressed as:
+# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')
+# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')
+# time-handling sugar is provided by the client library
+time stamp
+#Frame this data is associated with
+string frame_id
 """
-  __slots__ = ['acc_x','acc_y','acc_z','angular_velocity_roll','angular_velocity_pitch','angular_velocity_yaw','angle_roll','angle_pitch','angle_yaw']
-  _slot_types = ['float64','float64','float64','float64','float64','float64','float64','float64','float64']
+  __slots__ = ['header','acc_x','acc_y','acc_z','angular_velocity_roll','angular_velocity_pitch','angular_velocity_yaw','angle_roll','angle_pitch','angle_yaw']
+  _slot_types = ['std_msgs/Header','float64','float64','float64','float64','float64','float64','float64','float64','float64']
 
   def __init__(self, *args, **kwds):
     """
@@ -32,7 +50,7 @@ float64 angle_yaw
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       acc_x,acc_y,acc_z,angular_velocity_roll,angular_velocity_pitch,angular_velocity_yaw,angle_roll,angle_pitch,angle_yaw
+       header,acc_x,acc_y,acc_z,angular_velocity_roll,angular_velocity_pitch,angular_velocity_yaw,angle_roll,angle_pitch,angle_yaw
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -41,6 +59,8 @@ float64 angle_yaw
     if args or kwds:
       super(ImuExtended, self).__init__(*args, **kwds)
       # message fields cannot be None, assign default values for those that are
+      if self.header is None:
+        self.header = std_msgs.msg.Header()
       if self.acc_x is None:
         self.acc_x = 0.
       if self.acc_y is None:
@@ -60,6 +80,7 @@ float64 angle_yaw
       if self.angle_yaw is None:
         self.angle_yaw = 0.
     else:
+      self.header = std_msgs.msg.Header()
       self.acc_x = 0.
       self.acc_y = 0.
       self.acc_z = 0.
@@ -83,6 +104,14 @@ float64 angle_yaw
     """
     try:
       _x = self
+      buff.write(_get_struct_3I().pack(_x.header.seq, _x.header.stamp.secs, _x.header.stamp.nsecs))
+      _x = self.header.frame_id
+      length = len(_x)
+      if python3 or type(_x) == unicode:
+        _x = _x.encode('utf-8')
+        length = len(_x)
+      buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
+      _x = self
       buff.write(_get_struct_9d().pack(_x.acc_x, _x.acc_y, _x.acc_z, _x.angular_velocity_roll, _x.angular_velocity_pitch, _x.angular_velocity_yaw, _x.angle_roll, _x.angle_pitch, _x.angle_yaw))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
@@ -95,7 +124,22 @@ float64 angle_yaw
     if python3:
       codecs.lookup_error("rosmsg").msg_type = self._type
     try:
+      if self.header is None:
+        self.header = std_msgs.msg.Header()
       end = 0
+      _x = self
+      start = end
+      end += 12
+      (_x.header.seq, _x.header.stamp.secs, _x.header.stamp.nsecs,) = _get_struct_3I().unpack(str[start:end])
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      start = end
+      end += length
+      if python3:
+        self.header.frame_id = str[start:end].decode('utf-8', 'rosmsg')
+      else:
+        self.header.frame_id = str[start:end]
       _x = self
       start = end
       end += 72
@@ -113,6 +157,14 @@ float64 angle_yaw
     """
     try:
       _x = self
+      buff.write(_get_struct_3I().pack(_x.header.seq, _x.header.stamp.secs, _x.header.stamp.nsecs))
+      _x = self.header.frame_id
+      length = len(_x)
+      if python3 or type(_x) == unicode:
+        _x = _x.encode('utf-8')
+        length = len(_x)
+      buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
+      _x = self
       buff.write(_get_struct_9d().pack(_x.acc_x, _x.acc_y, _x.acc_z, _x.angular_velocity_roll, _x.angular_velocity_pitch, _x.angular_velocity_yaw, _x.angle_roll, _x.angle_pitch, _x.angle_yaw))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
@@ -126,7 +178,22 @@ float64 angle_yaw
     if python3:
       codecs.lookup_error("rosmsg").msg_type = self._type
     try:
+      if self.header is None:
+        self.header = std_msgs.msg.Header()
       end = 0
+      _x = self
+      start = end
+      end += 12
+      (_x.header.seq, _x.header.stamp.secs, _x.header.stamp.nsecs,) = _get_struct_3I().unpack(str[start:end])
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      start = end
+      end += length
+      if python3:
+        self.header.frame_id = str[start:end].decode('utf-8', 'rosmsg')
+      else:
+        self.header.frame_id = str[start:end]
       _x = self
       start = end
       end += 72
@@ -139,6 +206,12 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
+_struct_3I = None
+def _get_struct_3I():
+    global _struct_3I
+    if _struct_3I is None:
+        _struct_3I = struct.Struct("<3I")
+    return _struct_3I
 _struct_9d = None
 def _get_struct_9d():
     global _struct_9d

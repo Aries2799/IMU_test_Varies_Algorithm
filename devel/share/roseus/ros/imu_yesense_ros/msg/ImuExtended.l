@@ -10,15 +10,18 @@
 
 (in-package "ROS")
 ;;//! \htmlinclude ImuExtended.msg.html
+(if (not (find-package "STD_MSGS"))
+  (ros::roseus-add-msgs "std_msgs"))
 
 
 (defclass imu_yesense_ros::ImuExtended
   :super ros::object
-  :slots (_acc_x _acc_y _acc_z _angular_velocity_roll _angular_velocity_pitch _angular_velocity_yaw _angle_roll _angle_pitch _angle_yaw ))
+  :slots (_header _acc_x _acc_y _acc_z _angular_velocity_roll _angular_velocity_pitch _angular_velocity_yaw _angle_roll _angle_pitch _angle_yaw ))
 
 (defmethod imu_yesense_ros::ImuExtended
   (:init
    (&key
+    ((:header __header) (instance std_msgs::Header :init))
     ((:acc_x __acc_x) 0.0)
     ((:acc_y __acc_y) 0.0)
     ((:acc_z __acc_z) 0.0)
@@ -30,6 +33,7 @@
     ((:angle_yaw __angle_yaw) 0.0)
     )
    (send-super :init)
+   (setq _header __header)
    (setq _acc_x (float __acc_x))
    (setq _acc_y (float __acc_y))
    (setq _acc_z (float __acc_z))
@@ -40,6 +44,13 @@
    (setq _angle_pitch (float __angle_pitch))
    (setq _angle_yaw (float __angle_yaw))
    self)
+  (:header
+   (&rest __header)
+   (if (keywordp (car __header))
+       (send* _header __header)
+     (progn
+       (if __header (setq _header (car __header)))
+       _header)))
   (:acc_x
    (&optional __acc_x)
    (if __acc_x (setq _acc_x __acc_x)) _acc_x)
@@ -70,6 +81,8 @@
   (:serialization-length
    ()
    (+
+    ;; std_msgs/Header _header
+    (send _header :serialization-length)
     ;; float64 _acc_x
     8
     ;; float64 _acc_y
@@ -93,6 +106,8 @@
    (&optional strm)
    (let ((s (if strm strm
               (make-string-output-stream (send self :serialization-length)))))
+     ;; std_msgs/Header _header
+       (send _header :serialize s)
      ;; float64 _acc_x
        (sys::poke _acc_x (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
      ;; float64 _acc_y
@@ -115,6 +130,8 @@
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
    (buf &optional (ptr- 0))
+   ;; std_msgs/Header _header
+     (send _header :deserialize buf ptr-) (incf ptr- (send _header :serialization-length))
    ;; float64 _acc_x
      (setq _acc_x (sys::peek buf ptr- :double)) (incf ptr- 8)
    ;; float64 _acc_y
@@ -137,10 +154,11 @@
    self)
   )
 
-(setf (get imu_yesense_ros::ImuExtended :md5sum-) "2eb288617eb70de805bdc572560b798f")
+(setf (get imu_yesense_ros::ImuExtended :md5sum-) "b94728e8c9a2b6b4dbb2f39d36c69d58")
 (setf (get imu_yesense_ros::ImuExtended :datatype-) "imu_yesense_ros/ImuExtended")
 (setf (get imu_yesense_ros::ImuExtended :definition-)
-      "float64 acc_x
+      "std_msgs/Header header
+float64 acc_x
 float64 acc_y
 float64 acc_z
 float64 angular_velocity_roll
@@ -150,10 +168,26 @@ float64 angle_roll
 float64 angle_pitch
 float64 angle_yaw
 
+================================================================================
+MSG: std_msgs/Header
+# Standard metadata for higher-level stamped data types.
+# This is generally used to communicate timestamped data 
+# in a particular coordinate frame.
+# 
+# sequence ID: consecutively increasing ID 
+uint32 seq
+#Two-integer timestamp that is expressed as:
+# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')
+# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')
+# time-handling sugar is provided by the client library
+time stamp
+#Frame this data is associated with
+string frame_id
+
 ")
 
 
 
-(provide :imu_yesense_ros/ImuExtended "2eb288617eb70de805bdc572560b798f")
+(provide :imu_yesense_ros/ImuExtended "b94728e8c9a2b6b4dbb2f39d36c69d58")
 
 
