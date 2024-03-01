@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/zxy/IMU_test/src/imu_yesense_ros/src/imu_sensor_yesense.h
+rs232_toolkit.h
+/home/zxy/IMU_test/src/imu_yesense_ros/src/rs232_toolkit.h
+thread
+-
+functional
+-
+
+/home/zxy/IMU_test/src/imu_yesense_ros/src/main.cpp
+iostream
+-
+stdlib.h
+-
+unistd.h
+-
+time.h
+-
+imu_sensor_yesense.h
+/home/zxy/IMU_test/src/imu_yesense_ros/src/imu_sensor_yesense.h
+
+/home/zxy/IMU_test/src/imu_yesense_ros/src/rs232_toolkit.h
+sys/types.h
+-
+sys/stat.h
+-
+fcntl.h
+-
+inttypes.h
+-
+
