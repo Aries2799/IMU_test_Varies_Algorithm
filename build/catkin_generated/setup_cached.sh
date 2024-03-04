@@ -7,4 +7,7 @@
 # new environment variables
 
 # modified environment variables
+export CMAKE_PREFIX_PATH="/home/zxy/IMU_test/devel:$CMAKE_PREFIX_PATH"
 export PWD='/home/zxy/IMU_test/build'
+export ROSLISP_PACKAGE_DIRECTORIES='/home/zxy/IMU_test/devel/share/common-lisp'
+export ROS_PACKAGE_PATH="/home/zxy/IMU_test/src:$ROS_PACKAGE_PATH"
