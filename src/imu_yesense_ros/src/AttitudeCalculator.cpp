@@ -1,17 +1,34 @@
-#include "../include/AttitudeCalculator.h"
-#include <cmath>
+#include "AttitudeCalculator.h"
 
-Attitude AttitudeCalculator::calculateAttitude(const ImuData& imu_data) {
+AttitudeCalculator::AttitudeCalculator() : imu_sensor(new ImuSensorYesense()) {
+    imu_sensor->startWork();
+    imu_sensor->onMessageReceived = [this](const ImuData& imu_data) {
+        this->calculateAttitude(imu_data);
+        this->printImuData(imu_data);
+    };
+}
+
+AttitudeCalculator::~AttitudeCalculator() {
+    delete imu_sensor;
+}
+
+Attitude AttitudeCalculator::getLatestAttitude() const {
+    return latest_attitude;
+}
+
+void AttitudeCalculator::calculateAttitude(const ImuData& imu_data) {
     const double pi = 3.14159265358979323846;
-    Attitude attitude;
+
     double acc_x = imu_data.acc_x;
     double acc_y = imu_data.acc_y;
     double acc_z = imu_data.acc_z;
     double mag_x = imu_data.magnetic_x;
     double mag_y = imu_data.magnetic_y;
     double mag_z = imu_data.magnetic_z;
+    
+    // std::cout << "acc_x " << acc_x << "acc_y" << acc_y<< "acc_z" << acc_z << std::endl;
 
-    // 计算Pitch和Roll
+    // 计算Pitch和Roll（以度为单位）
     double pitch = atan2(-acc_x, sqrt(acc_y * acc_y + acc_z * acc_z)) * 180.0 / pi;
     double roll = atan2(acc_y, acc_z) * 180.0 / pi;
 
@@ -21,34 +38,20 @@ Attitude AttitudeCalculator::calculateAttitude(const ImuData& imu_data) {
 
     // 计算Yaw
     double yaw = atan2(-mag_y_comp, mag_x_comp) * 180.0 / pi;
+    
+    // std::cout << "pitch " << pitch << "roll" << roll<< "yaw" << yaw << std::endl;
 
-    // 输出结果
-    attitude.roll = roll;
-    attitude.pitch = pitch;
-    attitude.yaw = yaw;
-
-    return attitude;
+    // 更新latest_attitude
+    latest_attitude.roll = roll;
+    latest_attitude.pitch = pitch;
+    latest_attitude.yaw = yaw;
 }
 
 
-// int main() {
-//     int count = 0;
-//     timespec timestamp;
-//     ImuSensorYesense* imu_sensor = new ImuSensorYesense; // 创建读取
-//     imu_sensor->startWork();
-
-//     imu_sensor->onMessageReceived = [&](ImuData imu_data) {
-//         if (count % 200 == 0) {
-//             clock_gettime(CLOCK_MONOTONIC, &timestamp);
-//             calculateAttitude(imu_data); // 调用姿态解算函数
-//             std::cout << "Timestamp: " << timestamp.tv_sec << "." << timestamp.tv_nsec << std::endl;
-//         }
-//         count++;
-//     };
-
-//     while (1) {
-//         sleep(1); // 简化示例，实际使用时应避免使用无限循环
-//     }
-
-//     delete imu_sensor;
-// }
+void AttitudeCalculator::printImuData(const ImuData& imu_data) const {
+    timespec timestamp;
+    clock_gettime(CLOCK_MONOTONIC, &timestamp);
+    // std::cout << "++++++++++++++  " << timestamp.tv_sec << "." << timestamp.tv_nsec << "   ++++++++++++++" << std::endl;
+    // std::cout << "acc              " << imu_data.acc_x << ", " << imu_data.acc_y << ", " << imu_data.acc_z << std::endl;
+    // std::cout << "angular_velocity " << imu_data.angular_velocity_x << ", " << imu_data.angular_velocity_y << ", " << imu_data.angular_velocity_z << std::endl;
+}

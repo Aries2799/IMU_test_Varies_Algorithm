@@ -11,14 +11,10 @@ imu_yesense_ros/CMakeFiles/imu_yesense_ros_node.dir/src/imu_sensor_yesense.cpp.o
  /home/zxy/IMU_test/src/imu_yesense_ros/include/rs232_toolkit.h
  /home/zxy/IMU_test/src/imu_yesense_ros/src/imu_sensor_yesense.cpp
 imu_yesense_ros/CMakeFiles/imu_yesense_ros_node.dir/src/main.cpp.o
- /home/zxy/IMU_test/src/imu_yesense_ros/src/main.cpp
-imu_yesense_ros/CMakeFiles/imu_yesense_ros_node.dir/src/rosmain.cpp.o
- /home/zxy/IMU_test/devel/include/imu_yesense_ros/ImuExtended.h
  /home/zxy/IMU_test/src/imu_yesense_ros/include/AttitudeCalculator.h
  /home/zxy/IMU_test/src/imu_yesense_ros/include/imu_sensor_yesense.h
  /home/zxy/IMU_test/src/imu_yesense_ros/include/rs232_toolkit.h
- /home/zxy/IMU_test/src/imu_yesense_ros/src/rosmain.cpp
- /opt/ros/noetic/include/geometry_msgs/Quaternion.h
+ /home/zxy/IMU_test/src/imu_yesense_ros/src/main.cpp
  /opt/ros/noetic/include/geometry_msgs/Vector3.h
  /opt/ros/noetic/include/ros/advertise_options.h
  /opt/ros/noetic/include/ros/advertise_service_options.h
@@ -76,10 +72,10 @@ imu_yesense_ros/CMakeFiles/imu_yesense_ros_node.dir/src/rosmain.cpp.o
  /opt/ros/noetic/include/ros/wall_timer.h
  /opt/ros/noetic/include/ros/wall_timer_options.h
  /opt/ros/noetic/include/rosconsole/macros_generated.h
- /opt/ros/noetic/include/sensor_msgs/Imu.h
- /opt/ros/noetic/include/std_msgs/Header.h
  /opt/ros/noetic/include/xmlrpcpp/XmlRpcDecl.h
  /opt/ros/noetic/include/xmlrpcpp/XmlRpcValue.h
+imu_yesense_ros/CMakeFiles/imu_yesense_ros_node.dir/src/rosmain.cpp.o
+ /home/zxy/IMU_test/src/imu_yesense_ros/src/rosmain.cpp
 imu_yesense_ros/CMakeFiles/imu_yesense_ros_node.dir/src/rs232_toolkit.cpp.o
  /home/zxy/IMU_test/src/imu_yesense_ros/include/rs232_toolkit.h
  /home/zxy/IMU_test/src/imu_yesense_ros/src/rs232_toolkit.cpp

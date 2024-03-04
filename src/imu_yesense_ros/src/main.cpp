@@ -1,38 +1,36 @@
-// #include "ros/ros.h"
-// #include "std_msgs/Float64.h"
-// #include "geometry_msgs/Vector3.h" // 引入Vector3消息类型
-// #include "../include/AttitudeCalculator.h"
-// #include "../include/imu_sensor_yesense.h"
+#include "ros/ros.h"
+#include "geometry_msgs/Vector3.h"
+#include "AttitudeCalculator.h"
 
-// int main(int argc, char **argv) {
-//     ros::init(argc, argv, "attitude_publisher");
-//     ros::NodeHandle nh;
+int main(int argc, char **argv) {
+    ros::init(argc, argv, "attitude_publisher");
+    ros::NodeHandle nh;
 
-//     // 使用Vector3消息类型创建一个发布者
-//     ros::Publisher attitude_pub = nh.advertise<geometry_msgs::Vector3>("attitude", 1000);
+    // 创建姿态信息的Publisher
+    ros::Publisher attitude_pub = nh.advertise<geometry_msgs::Vector3>("attitude", 1000);
 
-//     ros::Rate loop_rate(10); // 10Hz
+    AttitudeCalculator calculator; // 假设这已经启动了IMU数据读取和姿态计算
 
-//     while (ros::ok()) {
-//         ImuData imu_data;
-//         // 假设imu_data已经根据你的IMU硬件被适当地填充
+    ros::Rate loop_rate(10); // 设置循环率，例如10Hz
 
-//         Attitude attitude = AttitudeCalculator::calculateAttitude(imu_data);
+    while (ros::ok()) {
+        // 获取最新的姿态数据
+        Attitude latestAttitude = calculator.getLatestAttitude();
 
-//         // 将姿态数据打包进Vector3消息
-//         geometry_msgs::Vector3 attitude_msg;
-//         attitude_msg.x = attitude.roll; // Roll
-//         attitude_msg.y = attitude.pitch; // Pitch
-//         attitude_msg.z = attitude.yaw; // Yaw
+        // 填充ROS消息
+        geometry_msgs::Vector3 msg;
+        msg.x = latestAttitude.roll;  // Roll
+        msg.y = latestAttitude.pitch; // Pitch
+        msg.z = latestAttitude.yaw;   // Yaw
 
-//         // 发布姿态消息
-//         attitude_pub.publish(attitude_msg);
+        // 发布姿态信息
+        attitude_pub.publish(msg);
 
-//         ROS_INFO("Published Attitude - Roll: %f, Pitch: %f, Yaw: %f", attitude.roll, attitude.pitch, attitude.yaw);
+        // ROS_INFO("Published Attitude - Roll: %f, Pitch: %f, Yaw: %f", latestAttitude.roll, latestAttitude.pitch, latestAttitude.yaw);
 
-//         ros::spinOnce();
-//         loop_rate.sleep();
-//     }
+        ros::spinOnce();
+        loop_rate.sleep();
+    }
 
-//     return 0;
-// }
+    return 0;
+}
