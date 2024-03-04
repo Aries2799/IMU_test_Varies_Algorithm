@@ -123,6 +123,33 @@ imu_yesense/fast:
 	$(MAKE) -f CMakeFiles/imu_yesense.dir/build.make CMakeFiles/imu_yesense.dir/build
 .PHONY : imu_yesense/fast
 
+attitude.o: attitude.cpp.o
+
+.PHONY : attitude.o
+
+# target to build an object file
+attitude.cpp.o:
+	$(MAKE) -f CMakeFiles/imu_yesense.dir/build.make CMakeFiles/imu_yesense.dir/attitude.cpp.o
+.PHONY : attitude.cpp.o
+
+attitude.i: attitude.cpp.i
+
+.PHONY : attitude.i
+
+# target to preprocess a source file
+attitude.cpp.i:
+	$(MAKE) -f CMakeFiles/imu_yesense.dir/build.make CMakeFiles/imu_yesense.dir/attitude.cpp.i
+.PHONY : attitude.cpp.i
+
+attitude.s: attitude.cpp.s
+
+.PHONY : attitude.s
+
+# target to generate assembly for a file
+attitude.cpp.s:
+	$(MAKE) -f CMakeFiles/imu_yesense.dir/build.make CMakeFiles/imu_yesense.dir/attitude.cpp.s
+.PHONY : attitude.cpp.s
+
 imu_sensor_yesense.o: imu_sensor_yesense.cpp.o
 
 .PHONY : imu_sensor_yesense.o
@@ -150,32 +177,32 @@ imu_sensor_yesense.cpp.s:
 	$(MAKE) -f CMakeFiles/imu_yesense.dir/build.make CMakeFiles/imu_yesense.dir/imu_sensor_yesense.cpp.s
 .PHONY : imu_sensor_yesense.cpp.s
 
-main.o: main.cpp.o
+rosmain.o: rosmain.cpp.o
 
-.PHONY : main.o
+.PHONY : rosmain.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/imu_yesense.dir/build.make CMakeFiles/imu_yesense.dir/main.cpp.o
-.PHONY : main.cpp.o
+rosmain.cpp.o:
+	$(MAKE) -f CMakeFiles/imu_yesense.dir/build.make CMakeFiles/imu_yesense.dir/rosmain.cpp.o
+.PHONY : rosmain.cpp.o
 
-main.i: main.cpp.i
+rosmain.i: rosmain.cpp.i
 
-.PHONY : main.i
+.PHONY : rosmain.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/imu_yesense.dir/build.make CMakeFiles/imu_yesense.dir/main.cpp.i
-.PHONY : main.cpp.i
+rosmain.cpp.i:
+	$(MAKE) -f CMakeFiles/imu_yesense.dir/build.make CMakeFiles/imu_yesense.dir/rosmain.cpp.i
+.PHONY : rosmain.cpp.i
 
-main.s: main.cpp.s
+rosmain.s: rosmain.cpp.s
 
-.PHONY : main.s
+.PHONY : rosmain.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/imu_yesense.dir/build.make CMakeFiles/imu_yesense.dir/main.cpp.s
-.PHONY : main.cpp.s
+rosmain.cpp.s:
+	$(MAKE) -f CMakeFiles/imu_yesense.dir/build.make CMakeFiles/imu_yesense.dir/rosmain.cpp.s
+.PHONY : rosmain.cpp.s
 
 rs232_toolkit.o: rs232_toolkit.cpp.o
 
@@ -213,12 +240,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... imu_yesense"
+	@echo "... attitude.o"
+	@echo "... attitude.i"
+	@echo "... attitude.s"
 	@echo "... imu_sensor_yesense.o"
 	@echo "... imu_sensor_yesense.i"
 	@echo "... imu_sensor_yesense.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... rosmain.o"
+	@echo "... rosmain.i"
+	@echo "... rosmain.s"
 	@echo "... rs232_toolkit.o"
 	@echo "... rs232_toolkit.i"
 	@echo "... rs232_toolkit.s"

@@ -4,8 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/zxy/IMU_test/src/imu_yesense_ros/src/attitude.cpp" "/home/zxy/IMU_test/src/imu_yesense_ros/src/build/CMakeFiles/imu_yesense.dir/attitude.cpp.o"
   "/home/zxy/IMU_test/src/imu_yesense_ros/src/imu_sensor_yesense.cpp" "/home/zxy/IMU_test/src/imu_yesense_ros/src/build/CMakeFiles/imu_yesense.dir/imu_sensor_yesense.cpp.o"
-  "/home/zxy/IMU_test/src/imu_yesense_ros/src/main.cpp" "/home/zxy/IMU_test/src/imu_yesense_ros/src/build/CMakeFiles/imu_yesense.dir/main.cpp.o"
+  "/home/zxy/IMU_test/src/imu_yesense_ros/src/rosmain.cpp" "/home/zxy/IMU_test/src/imu_yesense_ros/src/build/CMakeFiles/imu_yesense.dir/rosmain.cpp.o"
   "/home/zxy/IMU_test/src/imu_yesense_ros/src/rs232_toolkit.cpp" "/home/zxy/IMU_test/src/imu_yesense_ros/src/build/CMakeFiles/imu_yesense.dir/rs232_toolkit.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

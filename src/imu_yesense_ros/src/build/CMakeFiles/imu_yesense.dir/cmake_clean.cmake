@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/imu_yesense.dir/attitude.cpp.o"
   "CMakeFiles/imu_yesense.dir/imu_sensor_yesense.cpp.o"
-  "CMakeFiles/imu_yesense.dir/main.cpp.o"
+  "CMakeFiles/imu_yesense.dir/rosmain.cpp.o"
   "CMakeFiles/imu_yesense.dir/rs232_toolkit.cpp.o"
   "imu_yesense"
   "imu_yesense.pdb"

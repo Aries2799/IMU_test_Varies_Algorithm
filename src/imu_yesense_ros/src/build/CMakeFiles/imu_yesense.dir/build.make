@@ -57,9 +57,22 @@ include CMakeFiles/imu_yesense.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/imu_yesense.dir/flags.make
 
+CMakeFiles/imu_yesense.dir/attitude.cpp.o: CMakeFiles/imu_yesense.dir/flags.make
+CMakeFiles/imu_yesense.dir/attitude.cpp.o: ../attitude.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zxy/IMU_test/src/imu_yesense_ros/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/imu_yesense.dir/attitude.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/imu_yesense.dir/attitude.cpp.o -c /home/zxy/IMU_test/src/imu_yesense_ros/src/attitude.cpp
+
+CMakeFiles/imu_yesense.dir/attitude.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/imu_yesense.dir/attitude.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zxy/IMU_test/src/imu_yesense_ros/src/attitude.cpp > CMakeFiles/imu_yesense.dir/attitude.cpp.i
+
+CMakeFiles/imu_yesense.dir/attitude.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/imu_yesense.dir/attitude.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zxy/IMU_test/src/imu_yesense_ros/src/attitude.cpp -o CMakeFiles/imu_yesense.dir/attitude.cpp.s
+
 CMakeFiles/imu_yesense.dir/imu_sensor_yesense.cpp.o: CMakeFiles/imu_yesense.dir/flags.make
 CMakeFiles/imu_yesense.dir/imu_sensor_yesense.cpp.o: ../imu_sensor_yesense.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zxy/IMU_test/src/imu_yesense_ros/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/imu_yesense.dir/imu_sensor_yesense.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zxy/IMU_test/src/imu_yesense_ros/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/imu_yesense.dir/imu_sensor_yesense.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/imu_yesense.dir/imu_sensor_yesense.cpp.o -c /home/zxy/IMU_test/src/imu_yesense_ros/src/imu_sensor_yesense.cpp
 
 CMakeFiles/imu_yesense.dir/imu_sensor_yesense.cpp.i: cmake_force
@@ -70,22 +83,22 @@ CMakeFiles/imu_yesense.dir/imu_sensor_yesense.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/imu_yesense.dir/imu_sensor_yesense.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zxy/IMU_test/src/imu_yesense_ros/src/imu_sensor_yesense.cpp -o CMakeFiles/imu_yesense.dir/imu_sensor_yesense.cpp.s
 
-CMakeFiles/imu_yesense.dir/main.cpp.o: CMakeFiles/imu_yesense.dir/flags.make
-CMakeFiles/imu_yesense.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zxy/IMU_test/src/imu_yesense_ros/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/imu_yesense.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/imu_yesense.dir/main.cpp.o -c /home/zxy/IMU_test/src/imu_yesense_ros/src/main.cpp
+CMakeFiles/imu_yesense.dir/rosmain.cpp.o: CMakeFiles/imu_yesense.dir/flags.make
+CMakeFiles/imu_yesense.dir/rosmain.cpp.o: ../rosmain.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zxy/IMU_test/src/imu_yesense_ros/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/imu_yesense.dir/rosmain.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/imu_yesense.dir/rosmain.cpp.o -c /home/zxy/IMU_test/src/imu_yesense_ros/src/rosmain.cpp
 
-CMakeFiles/imu_yesense.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/imu_yesense.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zxy/IMU_test/src/imu_yesense_ros/src/main.cpp > CMakeFiles/imu_yesense.dir/main.cpp.i
+CMakeFiles/imu_yesense.dir/rosmain.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/imu_yesense.dir/rosmain.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zxy/IMU_test/src/imu_yesense_ros/src/rosmain.cpp > CMakeFiles/imu_yesense.dir/rosmain.cpp.i
 
-CMakeFiles/imu_yesense.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/imu_yesense.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zxy/IMU_test/src/imu_yesense_ros/src/main.cpp -o CMakeFiles/imu_yesense.dir/main.cpp.s
+CMakeFiles/imu_yesense.dir/rosmain.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/imu_yesense.dir/rosmain.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zxy/IMU_test/src/imu_yesense_ros/src/rosmain.cpp -o CMakeFiles/imu_yesense.dir/rosmain.cpp.s
 
 CMakeFiles/imu_yesense.dir/rs232_toolkit.cpp.o: CMakeFiles/imu_yesense.dir/flags.make
 CMakeFiles/imu_yesense.dir/rs232_toolkit.cpp.o: ../rs232_toolkit.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zxy/IMU_test/src/imu_yesense_ros/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/imu_yesense.dir/rs232_toolkit.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zxy/IMU_test/src/imu_yesense_ros/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/imu_yesense.dir/rs232_toolkit.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/imu_yesense.dir/rs232_toolkit.cpp.o -c /home/zxy/IMU_test/src/imu_yesense_ros/src/rs232_toolkit.cpp
 
 CMakeFiles/imu_yesense.dir/rs232_toolkit.cpp.i: cmake_force
@@ -98,19 +111,21 @@ CMakeFiles/imu_yesense.dir/rs232_toolkit.cpp.s: cmake_force
 
 # Object files for target imu_yesense
 imu_yesense_OBJECTS = \
+"CMakeFiles/imu_yesense.dir/attitude.cpp.o" \
 "CMakeFiles/imu_yesense.dir/imu_sensor_yesense.cpp.o" \
-"CMakeFiles/imu_yesense.dir/main.cpp.o" \
+"CMakeFiles/imu_yesense.dir/rosmain.cpp.o" \
 "CMakeFiles/imu_yesense.dir/rs232_toolkit.cpp.o"
 
 # External object files for target imu_yesense
 imu_yesense_EXTERNAL_OBJECTS =
 
+imu_yesense: CMakeFiles/imu_yesense.dir/attitude.cpp.o
 imu_yesense: CMakeFiles/imu_yesense.dir/imu_sensor_yesense.cpp.o
-imu_yesense: CMakeFiles/imu_yesense.dir/main.cpp.o
+imu_yesense: CMakeFiles/imu_yesense.dir/rosmain.cpp.o
 imu_yesense: CMakeFiles/imu_yesense.dir/rs232_toolkit.cpp.o
 imu_yesense: CMakeFiles/imu_yesense.dir/build.make
 imu_yesense: CMakeFiles/imu_yesense.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zxy/IMU_test/src/imu_yesense_ros/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable imu_yesense"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zxy/IMU_test/src/imu_yesense_ros/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable imu_yesense"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/imu_yesense.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
