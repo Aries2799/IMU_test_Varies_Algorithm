@@ -5,7 +5,7 @@
  *      Author: moxiaobo
  */
 
-#include "imu_sensor_yesense.h"
+#include "../include/imu_sensor_yesense.h"
 
 #include "termios.h"
 
