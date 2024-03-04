@@ -1,2 +1,0 @@
-imu_yesense_ros
--DCATKIN_DEVEL_PREFIX=/home/zxy/IMU_test/devel -DCMAKE_INSTALL_PREFIX=/home/zxy/IMU_test/install -G Unix Makefiles

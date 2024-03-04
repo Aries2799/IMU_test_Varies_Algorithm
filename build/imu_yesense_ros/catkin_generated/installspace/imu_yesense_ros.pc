@@ -1,8 +1,0 @@
-prefix=/home/zxy/IMU_test/install
-
-Name: imu_yesense_ros
-Description: Description of imu_yesense_ros
-Version: 0.0.0
-Cflags: -I${prefix}/include
-Libs: -L${prefix}/lib -limu_yesense_ros
-Requires: roscpp sensor_msgs message_runtime geometry_msgs
