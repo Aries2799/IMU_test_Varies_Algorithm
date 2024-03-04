@@ -41,10 +41,8 @@ include_directories(
 ## 声明可执行文件
 add_executable(${PROJECT_NAME}_node 
 src/rosmain.cpp 
-src/AttitudeCalculator.cpp 
 src/imu_sensor_yesense.cpp 
 src/rs232_toolkit.cpp
-src/main.cpp
 )
 
 ## 添加cmake目标依赖
