@@ -29,24 +29,24 @@ struct ImuExtended_
     , acc_x(0.0)
     , acc_y(0.0)
     , acc_z(0.0)
-    , angular_velocity_roll(0.0)
-    , angular_velocity_pitch(0.0)
-    , angular_velocity_yaw(0.0)
-    , angle_roll(0.0)
-    , angle_pitch(0.0)
-    , angle_yaw(0.0)  {
+    , angular_velocity_x(0.0)
+    , angular_velocity_y(0.0)
+    , angular_velocity_z(0.0)
+    , magnetic_x(0.0)
+    , magnetic_y(0.0)
+    , magnetic_z(0.0)  {
     }
   ImuExtended_(const ContainerAllocator& _alloc)
     : header(_alloc)
     , acc_x(0.0)
     , acc_y(0.0)
     , acc_z(0.0)
-    , angular_velocity_roll(0.0)
-    , angular_velocity_pitch(0.0)
-    , angular_velocity_yaw(0.0)
-    , angle_roll(0.0)
-    , angle_pitch(0.0)
-    , angle_yaw(0.0)  {
+    , angular_velocity_x(0.0)
+    , angular_velocity_y(0.0)
+    , angular_velocity_z(0.0)
+    , magnetic_x(0.0)
+    , magnetic_y(0.0)
+    , magnetic_z(0.0)  {
   (void)_alloc;
     }
 
@@ -64,23 +64,23 @@ struct ImuExtended_
    typedef double _acc_z_type;
   _acc_z_type acc_z;
 
-   typedef double _angular_velocity_roll_type;
-  _angular_velocity_roll_type angular_velocity_roll;
+   typedef double _angular_velocity_x_type;
+  _angular_velocity_x_type angular_velocity_x;
 
-   typedef double _angular_velocity_pitch_type;
-  _angular_velocity_pitch_type angular_velocity_pitch;
+   typedef double _angular_velocity_y_type;
+  _angular_velocity_y_type angular_velocity_y;
 
-   typedef double _angular_velocity_yaw_type;
-  _angular_velocity_yaw_type angular_velocity_yaw;
+   typedef double _angular_velocity_z_type;
+  _angular_velocity_z_type angular_velocity_z;
 
-   typedef double _angle_roll_type;
-  _angle_roll_type angle_roll;
+   typedef double _magnetic_x_type;
+  _magnetic_x_type magnetic_x;
 
-   typedef double _angle_pitch_type;
-  _angle_pitch_type angle_pitch;
+   typedef double _magnetic_y_type;
+  _magnetic_y_type magnetic_y;
 
-   typedef double _angle_yaw_type;
-  _angle_yaw_type angle_yaw;
+   typedef double _magnetic_z_type;
+  _magnetic_z_type magnetic_z;
 
 
 
@@ -115,12 +115,12 @@ bool operator==(const ::imu_yesense_ros::ImuExtended_<ContainerAllocator1> & lhs
     lhs.acc_x == rhs.acc_x &&
     lhs.acc_y == rhs.acc_y &&
     lhs.acc_z == rhs.acc_z &&
-    lhs.angular_velocity_roll == rhs.angular_velocity_roll &&
-    lhs.angular_velocity_pitch == rhs.angular_velocity_pitch &&
-    lhs.angular_velocity_yaw == rhs.angular_velocity_yaw &&
-    lhs.angle_roll == rhs.angle_roll &&
-    lhs.angle_pitch == rhs.angle_pitch &&
-    lhs.angle_yaw == rhs.angle_yaw;
+    lhs.angular_velocity_x == rhs.angular_velocity_x &&
+    lhs.angular_velocity_y == rhs.angular_velocity_y &&
+    lhs.angular_velocity_z == rhs.angular_velocity_z &&
+    lhs.magnetic_x == rhs.magnetic_x &&
+    lhs.magnetic_y == rhs.magnetic_y &&
+    lhs.magnetic_z == rhs.magnetic_z;
 }
 
 template<typename ContainerAllocator1, typename ContainerAllocator2>
@@ -177,12 +177,12 @@ struct MD5Sum< ::imu_yesense_ros::ImuExtended_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "b94728e8c9a2b6b4dbb2f39d36c69d58";
+    return "d610238899c9b65ff1d2c524fd6e233f";
   }
 
   static const char* value(const ::imu_yesense_ros::ImuExtended_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xb94728e8c9a2b6b4ULL;
-  static const uint64_t static_value2 = 0xdbb2f39d36c69d58ULL;
+  static const uint64_t static_value1 = 0xd610238899c9b65fULL;
+  static const uint64_t static_value2 = 0xf1d2c524fd6e233fULL;
 };
 
 template<class ContainerAllocator>
@@ -205,12 +205,12 @@ struct Definition< ::imu_yesense_ros::ImuExtended_<ContainerAllocator> >
 "float64 acc_x\n"
 "float64 acc_y\n"
 "float64 acc_z\n"
-"float64 angular_velocity_roll\n"
-"float64 angular_velocity_pitch\n"
-"float64 angular_velocity_yaw\n"
-"float64 angle_roll\n"
-"float64 angle_pitch\n"
-"float64 angle_yaw\n"
+"float64 angular_velocity_x\n"
+"float64 angular_velocity_y\n"
+"float64 angular_velocity_z\n"
+"float64 magnetic_x\n"
+"float64 magnetic_y\n"
+"float64 magnetic_z\n"
 "\n"
 "================================================================================\n"
 "MSG: std_msgs/Header\n"
@@ -249,12 +249,12 @@ namespace serialization
       stream.next(m.acc_x);
       stream.next(m.acc_y);
       stream.next(m.acc_z);
-      stream.next(m.angular_velocity_roll);
-      stream.next(m.angular_velocity_pitch);
-      stream.next(m.angular_velocity_yaw);
-      stream.next(m.angle_roll);
-      stream.next(m.angle_pitch);
-      stream.next(m.angle_yaw);
+      stream.next(m.angular_velocity_x);
+      stream.next(m.angular_velocity_y);
+      stream.next(m.angular_velocity_z);
+      stream.next(m.magnetic_x);
+      stream.next(m.magnetic_y);
+      stream.next(m.magnetic_z);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -282,18 +282,18 @@ struct Printer< ::imu_yesense_ros::ImuExtended_<ContainerAllocator> >
     Printer<double>::stream(s, indent + "  ", v.acc_y);
     s << indent << "acc_z: ";
     Printer<double>::stream(s, indent + "  ", v.acc_z);
-    s << indent << "angular_velocity_roll: ";
-    Printer<double>::stream(s, indent + "  ", v.angular_velocity_roll);
-    s << indent << "angular_velocity_pitch: ";
-    Printer<double>::stream(s, indent + "  ", v.angular_velocity_pitch);
-    s << indent << "angular_velocity_yaw: ";
-    Printer<double>::stream(s, indent + "  ", v.angular_velocity_yaw);
-    s << indent << "angle_roll: ";
-    Printer<double>::stream(s, indent + "  ", v.angle_roll);
-    s << indent << "angle_pitch: ";
-    Printer<double>::stream(s, indent + "  ", v.angle_pitch);
-    s << indent << "angle_yaw: ";
-    Printer<double>::stream(s, indent + "  ", v.angle_yaw);
+    s << indent << "angular_velocity_x: ";
+    Printer<double>::stream(s, indent + "  ", v.angular_velocity_x);
+    s << indent << "angular_velocity_y: ";
+    Printer<double>::stream(s, indent + "  ", v.angular_velocity_y);
+    s << indent << "angular_velocity_z: ";
+    Printer<double>::stream(s, indent + "  ", v.angular_velocity_z);
+    s << indent << "magnetic_x: ";
+    Printer<double>::stream(s, indent + "  ", v.magnetic_x);
+    s << indent << "magnetic_y: ";
+    Printer<double>::stream(s, indent + "  ", v.magnetic_y);
+    s << indent << "magnetic_z: ";
+    Printer<double>::stream(s, indent + "  ", v.magnetic_z);
   }
 };
 

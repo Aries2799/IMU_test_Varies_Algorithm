@@ -7,16 +7,16 @@
           ACC_Y
           ACC_Z-VAL
           ACC_Z
-          ANGULAR_VELOCITY_ROLL-VAL
-          ANGULAR_VELOCITY_ROLL
-          ANGULAR_VELOCITY_PITCH-VAL
-          ANGULAR_VELOCITY_PITCH
-          ANGULAR_VELOCITY_YAW-VAL
-          ANGULAR_VELOCITY_YAW
-          ANGLE_ROLL-VAL
-          ANGLE_ROLL
-          ANGLE_PITCH-VAL
-          ANGLE_PITCH
-          ANGLE_YAW-VAL
-          ANGLE_YAW
+          ANGULAR_VELOCITY_X-VAL
+          ANGULAR_VELOCITY_X
+          ANGULAR_VELOCITY_Y-VAL
+          ANGULAR_VELOCITY_Y
+          ANGULAR_VELOCITY_Z-VAL
+          ANGULAR_VELOCITY_Z
+          MAGNETIC_X-VAL
+          MAGNETIC_X
+          MAGNETIC_Y-VAL
+          MAGNETIC_Y
+          MAGNETIC_Z-VAL
+          MAGNETIC_Z
 ))

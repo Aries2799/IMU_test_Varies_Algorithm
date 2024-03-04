@@ -31,12 +31,12 @@ int main(int argc, char **argv){
       imu_extended_msg.acc_x = imu_data.acc_x;
       imu_extended_msg.acc_y = imu_data.acc_y;
       imu_extended_msg.acc_z = imu_data.acc_z;
-      imu_extended_msg.angular_velocity_roll = imu_data.angular_velocity_roll;
-      imu_extended_msg.angular_velocity_pitch = imu_data.angular_velocity_pitch;
-      imu_extended_msg.angular_velocity_yaw = imu_data.angular_velocity_yaw;
-      imu_extended_msg.angle_roll = imu_data.angle_roll; 
-      imu_extended_msg.angle_pitch = imu_data.angle_pitch;
-      imu_extended_msg.angle_yaw = imu_data.angle_yaw;
+      imu_extended_msg.angular_velocity_x = imu_data.angular_velocity_x;
+      imu_extended_msg.angular_velocity_y = imu_data.angular_velocity_y;
+      imu_extended_msg.angular_velocity_z = imu_data.angular_velocity_z;
+      imu_extended_msg.magnetic_x = imu_data.magnetic_x; 
+      imu_extended_msg.magnetic_y = imu_data.magnetic_y;
+      imu_extended_msg.magnetic_z = imu_data.magnetic_z;
 
     
       imu_pub.publish(imu_extended_msg);

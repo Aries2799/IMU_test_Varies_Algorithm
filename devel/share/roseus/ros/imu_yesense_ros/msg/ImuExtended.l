@@ -16,7 +16,7 @@
 
 (defclass imu_yesense_ros::ImuExtended
   :super ros::object
-  :slots (_header _acc_x _acc_y _acc_z _angular_velocity_roll _angular_velocity_pitch _angular_velocity_yaw _angle_roll _angle_pitch _angle_yaw ))
+  :slots (_header _acc_x _acc_y _acc_z _angular_velocity_x _angular_velocity_y _angular_velocity_z _magnetic_x _magnetic_y _magnetic_z ))
 
 (defmethod imu_yesense_ros::ImuExtended
   (:init
@@ -25,24 +25,24 @@
     ((:acc_x __acc_x) 0.0)
     ((:acc_y __acc_y) 0.0)
     ((:acc_z __acc_z) 0.0)
-    ((:angular_velocity_roll __angular_velocity_roll) 0.0)
-    ((:angular_velocity_pitch __angular_velocity_pitch) 0.0)
-    ((:angular_velocity_yaw __angular_velocity_yaw) 0.0)
-    ((:angle_roll __angle_roll) 0.0)
-    ((:angle_pitch __angle_pitch) 0.0)
-    ((:angle_yaw __angle_yaw) 0.0)
+    ((:angular_velocity_x __angular_velocity_x) 0.0)
+    ((:angular_velocity_y __angular_velocity_y) 0.0)
+    ((:angular_velocity_z __angular_velocity_z) 0.0)
+    ((:magnetic_x __magnetic_x) 0.0)
+    ((:magnetic_y __magnetic_y) 0.0)
+    ((:magnetic_z __magnetic_z) 0.0)
     )
    (send-super :init)
    (setq _header __header)
    (setq _acc_x (float __acc_x))
    (setq _acc_y (float __acc_y))
    (setq _acc_z (float __acc_z))
-   (setq _angular_velocity_roll (float __angular_velocity_roll))
-   (setq _angular_velocity_pitch (float __angular_velocity_pitch))
-   (setq _angular_velocity_yaw (float __angular_velocity_yaw))
-   (setq _angle_roll (float __angle_roll))
-   (setq _angle_pitch (float __angle_pitch))
-   (setq _angle_yaw (float __angle_yaw))
+   (setq _angular_velocity_x (float __angular_velocity_x))
+   (setq _angular_velocity_y (float __angular_velocity_y))
+   (setq _angular_velocity_z (float __angular_velocity_z))
+   (setq _magnetic_x (float __magnetic_x))
+   (setq _magnetic_y (float __magnetic_y))
+   (setq _magnetic_z (float __magnetic_z))
    self)
   (:header
    (&rest __header)
@@ -60,24 +60,24 @@
   (:acc_z
    (&optional __acc_z)
    (if __acc_z (setq _acc_z __acc_z)) _acc_z)
-  (:angular_velocity_roll
-   (&optional __angular_velocity_roll)
-   (if __angular_velocity_roll (setq _angular_velocity_roll __angular_velocity_roll)) _angular_velocity_roll)
-  (:angular_velocity_pitch
-   (&optional __angular_velocity_pitch)
-   (if __angular_velocity_pitch (setq _angular_velocity_pitch __angular_velocity_pitch)) _angular_velocity_pitch)
-  (:angular_velocity_yaw
-   (&optional __angular_velocity_yaw)
-   (if __angular_velocity_yaw (setq _angular_velocity_yaw __angular_velocity_yaw)) _angular_velocity_yaw)
-  (:angle_roll
-   (&optional __angle_roll)
-   (if __angle_roll (setq _angle_roll __angle_roll)) _angle_roll)
-  (:angle_pitch
-   (&optional __angle_pitch)
-   (if __angle_pitch (setq _angle_pitch __angle_pitch)) _angle_pitch)
-  (:angle_yaw
-   (&optional __angle_yaw)
-   (if __angle_yaw (setq _angle_yaw __angle_yaw)) _angle_yaw)
+  (:angular_velocity_x
+   (&optional __angular_velocity_x)
+   (if __angular_velocity_x (setq _angular_velocity_x __angular_velocity_x)) _angular_velocity_x)
+  (:angular_velocity_y
+   (&optional __angular_velocity_y)
+   (if __angular_velocity_y (setq _angular_velocity_y __angular_velocity_y)) _angular_velocity_y)
+  (:angular_velocity_z
+   (&optional __angular_velocity_z)
+   (if __angular_velocity_z (setq _angular_velocity_z __angular_velocity_z)) _angular_velocity_z)
+  (:magnetic_x
+   (&optional __magnetic_x)
+   (if __magnetic_x (setq _magnetic_x __magnetic_x)) _magnetic_x)
+  (:magnetic_y
+   (&optional __magnetic_y)
+   (if __magnetic_y (setq _magnetic_y __magnetic_y)) _magnetic_y)
+  (:magnetic_z
+   (&optional __magnetic_z)
+   (if __magnetic_z (setq _magnetic_z __magnetic_z)) _magnetic_z)
   (:serialization-length
    ()
    (+
@@ -89,17 +89,17 @@
     8
     ;; float64 _acc_z
     8
-    ;; float64 _angular_velocity_roll
+    ;; float64 _angular_velocity_x
     8
-    ;; float64 _angular_velocity_pitch
+    ;; float64 _angular_velocity_y
     8
-    ;; float64 _angular_velocity_yaw
+    ;; float64 _angular_velocity_z
     8
-    ;; float64 _angle_roll
+    ;; float64 _magnetic_x
     8
-    ;; float64 _angle_pitch
+    ;; float64 _magnetic_y
     8
-    ;; float64 _angle_yaw
+    ;; float64 _magnetic_z
     8
     ))
   (:serialize
@@ -114,18 +114,18 @@
        (sys::poke _acc_y (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
      ;; float64 _acc_z
        (sys::poke _acc_z (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
-     ;; float64 _angular_velocity_roll
-       (sys::poke _angular_velocity_roll (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
-     ;; float64 _angular_velocity_pitch
-       (sys::poke _angular_velocity_pitch (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
-     ;; float64 _angular_velocity_yaw
-       (sys::poke _angular_velocity_yaw (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
-     ;; float64 _angle_roll
-       (sys::poke _angle_roll (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
-     ;; float64 _angle_pitch
-       (sys::poke _angle_pitch (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
-     ;; float64 _angle_yaw
-       (sys::poke _angle_yaw (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
+     ;; float64 _angular_velocity_x
+       (sys::poke _angular_velocity_x (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
+     ;; float64 _angular_velocity_y
+       (sys::poke _angular_velocity_y (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
+     ;; float64 _angular_velocity_z
+       (sys::poke _angular_velocity_z (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
+     ;; float64 _magnetic_x
+       (sys::poke _magnetic_x (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
+     ;; float64 _magnetic_y
+       (sys::poke _magnetic_y (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
+     ;; float64 _magnetic_z
+       (sys::poke _magnetic_z (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
@@ -138,35 +138,35 @@
      (setq _acc_y (sys::peek buf ptr- :double)) (incf ptr- 8)
    ;; float64 _acc_z
      (setq _acc_z (sys::peek buf ptr- :double)) (incf ptr- 8)
-   ;; float64 _angular_velocity_roll
-     (setq _angular_velocity_roll (sys::peek buf ptr- :double)) (incf ptr- 8)
-   ;; float64 _angular_velocity_pitch
-     (setq _angular_velocity_pitch (sys::peek buf ptr- :double)) (incf ptr- 8)
-   ;; float64 _angular_velocity_yaw
-     (setq _angular_velocity_yaw (sys::peek buf ptr- :double)) (incf ptr- 8)
-   ;; float64 _angle_roll
-     (setq _angle_roll (sys::peek buf ptr- :double)) (incf ptr- 8)
-   ;; float64 _angle_pitch
-     (setq _angle_pitch (sys::peek buf ptr- :double)) (incf ptr- 8)
-   ;; float64 _angle_yaw
-     (setq _angle_yaw (sys::peek buf ptr- :double)) (incf ptr- 8)
+   ;; float64 _angular_velocity_x
+     (setq _angular_velocity_x (sys::peek buf ptr- :double)) (incf ptr- 8)
+   ;; float64 _angular_velocity_y
+     (setq _angular_velocity_y (sys::peek buf ptr- :double)) (incf ptr- 8)
+   ;; float64 _angular_velocity_z
+     (setq _angular_velocity_z (sys::peek buf ptr- :double)) (incf ptr- 8)
+   ;; float64 _magnetic_x
+     (setq _magnetic_x (sys::peek buf ptr- :double)) (incf ptr- 8)
+   ;; float64 _magnetic_y
+     (setq _magnetic_y (sys::peek buf ptr- :double)) (incf ptr- 8)
+   ;; float64 _magnetic_z
+     (setq _magnetic_z (sys::peek buf ptr- :double)) (incf ptr- 8)
    ;;
    self)
   )
 
-(setf (get imu_yesense_ros::ImuExtended :md5sum-) "b94728e8c9a2b6b4dbb2f39d36c69d58")
+(setf (get imu_yesense_ros::ImuExtended :md5sum-) "d610238899c9b65ff1d2c524fd6e233f")
 (setf (get imu_yesense_ros::ImuExtended :datatype-) "imu_yesense_ros/ImuExtended")
 (setf (get imu_yesense_ros::ImuExtended :definition-)
       "std_msgs/Header header
 float64 acc_x
 float64 acc_y
 float64 acc_z
-float64 angular_velocity_roll
-float64 angular_velocity_pitch
-float64 angular_velocity_yaw
-float64 angle_roll
-float64 angle_pitch
-float64 angle_yaw
+float64 angular_velocity_x
+float64 angular_velocity_y
+float64 angular_velocity_z
+float64 magnetic_x
+float64 magnetic_y
+float64 magnetic_z
 
 ================================================================================
 MSG: std_msgs/Header
@@ -188,6 +188,6 @@ string frame_id
 
 
 
-(provide :imu_yesense_ros/ImuExtended "b94728e8c9a2b6b4dbb2f39d36c69d58")
+(provide :imu_yesense_ros/ImuExtended "d610238899c9b65ff1d2c524fd6e233f")
 
 

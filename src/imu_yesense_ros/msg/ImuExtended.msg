@@ -2,9 +2,9 @@ std_msgs/Header header
 float64 acc_x
 float64 acc_y
 float64 acc_z
-float64 angular_velocity_roll
-float64 angular_velocity_pitch
-float64 angular_velocity_yaw
-float64 angle_roll
-float64 angle_pitch
-float64 angle_yaw
+float64 angular_velocity_x
+float64 angular_velocity_y
+float64 angular_velocity_z
+float64 magnetic_x
+float64 magnetic_y
+float64 magnetic_z

@@ -27,34 +27,34 @@
     :initarg :acc_z
     :type cl:float
     :initform 0.0)
-   (angular_velocity_roll
-    :reader angular_velocity_roll
-    :initarg :angular_velocity_roll
+   (angular_velocity_x
+    :reader angular_velocity_x
+    :initarg :angular_velocity_x
     :type cl:float
     :initform 0.0)
-   (angular_velocity_pitch
-    :reader angular_velocity_pitch
-    :initarg :angular_velocity_pitch
+   (angular_velocity_y
+    :reader angular_velocity_y
+    :initarg :angular_velocity_y
     :type cl:float
     :initform 0.0)
-   (angular_velocity_yaw
-    :reader angular_velocity_yaw
-    :initarg :angular_velocity_yaw
+   (angular_velocity_z
+    :reader angular_velocity_z
+    :initarg :angular_velocity_z
     :type cl:float
     :initform 0.0)
-   (angle_roll
-    :reader angle_roll
-    :initarg :angle_roll
+   (magnetic_x
+    :reader magnetic_x
+    :initarg :magnetic_x
     :type cl:float
     :initform 0.0)
-   (angle_pitch
-    :reader angle_pitch
-    :initarg :angle_pitch
+   (magnetic_y
+    :reader magnetic_y
+    :initarg :magnetic_y
     :type cl:float
     :initform 0.0)
-   (angle_yaw
-    :reader angle_yaw
-    :initarg :angle_yaw
+   (magnetic_z
+    :reader magnetic_z
+    :initarg :magnetic_z
     :type cl:float
     :initform 0.0))
 )
@@ -87,35 +87,35 @@
   (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader imu_yesense_ros-msg:acc_z-val is deprecated.  Use imu_yesense_ros-msg:acc_z instead.")
   (acc_z m))
 
-(cl:ensure-generic-function 'angular_velocity_roll-val :lambda-list '(m))
-(cl:defmethod angular_velocity_roll-val ((m <ImuExtended>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader imu_yesense_ros-msg:angular_velocity_roll-val is deprecated.  Use imu_yesense_ros-msg:angular_velocity_roll instead.")
-  (angular_velocity_roll m))
+(cl:ensure-generic-function 'angular_velocity_x-val :lambda-list '(m))
+(cl:defmethod angular_velocity_x-val ((m <ImuExtended>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader imu_yesense_ros-msg:angular_velocity_x-val is deprecated.  Use imu_yesense_ros-msg:angular_velocity_x instead.")
+  (angular_velocity_x m))
 
-(cl:ensure-generic-function 'angular_velocity_pitch-val :lambda-list '(m))
-(cl:defmethod angular_velocity_pitch-val ((m <ImuExtended>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader imu_yesense_ros-msg:angular_velocity_pitch-val is deprecated.  Use imu_yesense_ros-msg:angular_velocity_pitch instead.")
-  (angular_velocity_pitch m))
+(cl:ensure-generic-function 'angular_velocity_y-val :lambda-list '(m))
+(cl:defmethod angular_velocity_y-val ((m <ImuExtended>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader imu_yesense_ros-msg:angular_velocity_y-val is deprecated.  Use imu_yesense_ros-msg:angular_velocity_y instead.")
+  (angular_velocity_y m))
 
-(cl:ensure-generic-function 'angular_velocity_yaw-val :lambda-list '(m))
-(cl:defmethod angular_velocity_yaw-val ((m <ImuExtended>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader imu_yesense_ros-msg:angular_velocity_yaw-val is deprecated.  Use imu_yesense_ros-msg:angular_velocity_yaw instead.")
-  (angular_velocity_yaw m))
+(cl:ensure-generic-function 'angular_velocity_z-val :lambda-list '(m))
+(cl:defmethod angular_velocity_z-val ((m <ImuExtended>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader imu_yesense_ros-msg:angular_velocity_z-val is deprecated.  Use imu_yesense_ros-msg:angular_velocity_z instead.")
+  (angular_velocity_z m))
 
-(cl:ensure-generic-function 'angle_roll-val :lambda-list '(m))
-(cl:defmethod angle_roll-val ((m <ImuExtended>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader imu_yesense_ros-msg:angle_roll-val is deprecated.  Use imu_yesense_ros-msg:angle_roll instead.")
-  (angle_roll m))
+(cl:ensure-generic-function 'magnetic_x-val :lambda-list '(m))
+(cl:defmethod magnetic_x-val ((m <ImuExtended>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader imu_yesense_ros-msg:magnetic_x-val is deprecated.  Use imu_yesense_ros-msg:magnetic_x instead.")
+  (magnetic_x m))
 
-(cl:ensure-generic-function 'angle_pitch-val :lambda-list '(m))
-(cl:defmethod angle_pitch-val ((m <ImuExtended>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader imu_yesense_ros-msg:angle_pitch-val is deprecated.  Use imu_yesense_ros-msg:angle_pitch instead.")
-  (angle_pitch m))
+(cl:ensure-generic-function 'magnetic_y-val :lambda-list '(m))
+(cl:defmethod magnetic_y-val ((m <ImuExtended>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader imu_yesense_ros-msg:magnetic_y-val is deprecated.  Use imu_yesense_ros-msg:magnetic_y instead.")
+  (magnetic_y m))
 
-(cl:ensure-generic-function 'angle_yaw-val :lambda-list '(m))
-(cl:defmethod angle_yaw-val ((m <ImuExtended>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader imu_yesense_ros-msg:angle_yaw-val is deprecated.  Use imu_yesense_ros-msg:angle_yaw instead.")
-  (angle_yaw m))
+(cl:ensure-generic-function 'magnetic_z-val :lambda-list '(m))
+(cl:defmethod magnetic_z-val ((m <ImuExtended>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader imu_yesense_ros-msg:magnetic_z-val is deprecated.  Use imu_yesense_ros-msg:magnetic_z instead.")
+  (magnetic_z m))
 (cl:defmethod roslisp-msg-protocol:serialize ((msg <ImuExtended>) ostream)
   "Serializes a message object of type '<ImuExtended>"
   (roslisp-msg-protocol:serialize (cl:slot-value msg 'header) ostream)
@@ -146,7 +146,7 @@
     (cl:write-byte (cl:ldb (cl:byte 8 40) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 48) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 56) bits) ostream))
-  (cl:let ((bits (roslisp-utils:encode-double-float-bits (cl:slot-value msg 'angular_velocity_roll))))
+  (cl:let ((bits (roslisp-utils:encode-double-float-bits (cl:slot-value msg 'angular_velocity_x))))
     (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
@@ -155,7 +155,7 @@
     (cl:write-byte (cl:ldb (cl:byte 8 40) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 48) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 56) bits) ostream))
-  (cl:let ((bits (roslisp-utils:encode-double-float-bits (cl:slot-value msg 'angular_velocity_pitch))))
+  (cl:let ((bits (roslisp-utils:encode-double-float-bits (cl:slot-value msg 'angular_velocity_y))))
     (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
@@ -164,7 +164,7 @@
     (cl:write-byte (cl:ldb (cl:byte 8 40) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 48) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 56) bits) ostream))
-  (cl:let ((bits (roslisp-utils:encode-double-float-bits (cl:slot-value msg 'angular_velocity_yaw))))
+  (cl:let ((bits (roslisp-utils:encode-double-float-bits (cl:slot-value msg 'angular_velocity_z))))
     (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
@@ -173,7 +173,7 @@
     (cl:write-byte (cl:ldb (cl:byte 8 40) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 48) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 56) bits) ostream))
-  (cl:let ((bits (roslisp-utils:encode-double-float-bits (cl:slot-value msg 'angle_roll))))
+  (cl:let ((bits (roslisp-utils:encode-double-float-bits (cl:slot-value msg 'magnetic_x))))
     (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
@@ -182,7 +182,7 @@
     (cl:write-byte (cl:ldb (cl:byte 8 40) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 48) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 56) bits) ostream))
-  (cl:let ((bits (roslisp-utils:encode-double-float-bits (cl:slot-value msg 'angle_pitch))))
+  (cl:let ((bits (roslisp-utils:encode-double-float-bits (cl:slot-value msg 'magnetic_y))))
     (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
@@ -191,7 +191,7 @@
     (cl:write-byte (cl:ldb (cl:byte 8 40) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 48) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 56) bits) ostream))
-  (cl:let ((bits (roslisp-utils:encode-double-float-bits (cl:slot-value msg 'angle_yaw))))
+  (cl:let ((bits (roslisp-utils:encode-double-float-bits (cl:slot-value msg 'magnetic_z))))
     (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
@@ -243,7 +243,7 @@
       (cl:setf (cl:ldb (cl:byte 8 40) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 48) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 56) bits) (cl:read-byte istream))
-    (cl:setf (cl:slot-value msg 'angular_velocity_roll) (roslisp-utils:decode-double-float-bits bits)))
+    (cl:setf (cl:slot-value msg 'angular_velocity_x) (roslisp-utils:decode-double-float-bits bits)))
     (cl:let ((bits 0))
       (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
@@ -253,7 +253,7 @@
       (cl:setf (cl:ldb (cl:byte 8 40) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 48) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 56) bits) (cl:read-byte istream))
-    (cl:setf (cl:slot-value msg 'angular_velocity_pitch) (roslisp-utils:decode-double-float-bits bits)))
+    (cl:setf (cl:slot-value msg 'angular_velocity_y) (roslisp-utils:decode-double-float-bits bits)))
     (cl:let ((bits 0))
       (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
@@ -263,7 +263,7 @@
       (cl:setf (cl:ldb (cl:byte 8 40) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 48) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 56) bits) (cl:read-byte istream))
-    (cl:setf (cl:slot-value msg 'angular_velocity_yaw) (roslisp-utils:decode-double-float-bits bits)))
+    (cl:setf (cl:slot-value msg 'angular_velocity_z) (roslisp-utils:decode-double-float-bits bits)))
     (cl:let ((bits 0))
       (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
@@ -273,7 +273,7 @@
       (cl:setf (cl:ldb (cl:byte 8 40) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 48) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 56) bits) (cl:read-byte istream))
-    (cl:setf (cl:slot-value msg 'angle_roll) (roslisp-utils:decode-double-float-bits bits)))
+    (cl:setf (cl:slot-value msg 'magnetic_x) (roslisp-utils:decode-double-float-bits bits)))
     (cl:let ((bits 0))
       (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
@@ -283,7 +283,7 @@
       (cl:setf (cl:ldb (cl:byte 8 40) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 48) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 56) bits) (cl:read-byte istream))
-    (cl:setf (cl:slot-value msg 'angle_pitch) (roslisp-utils:decode-double-float-bits bits)))
+    (cl:setf (cl:slot-value msg 'magnetic_y) (roslisp-utils:decode-double-float-bits bits)))
     (cl:let ((bits 0))
       (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
@@ -293,7 +293,7 @@
       (cl:setf (cl:ldb (cl:byte 8 40) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 48) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 56) bits) (cl:read-byte istream))
-    (cl:setf (cl:slot-value msg 'angle_yaw) (roslisp-utils:decode-double-float-bits bits)))
+    (cl:setf (cl:slot-value msg 'magnetic_z) (roslisp-utils:decode-double-float-bits bits)))
   msg
 )
 (cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql '<ImuExtended>)))
@@ -304,16 +304,16 @@
   "imu_yesense_ros/ImuExtended")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<ImuExtended>)))
   "Returns md5sum for a message object of type '<ImuExtended>"
-  "b94728e8c9a2b6b4dbb2f39d36c69d58")
+  "d610238899c9b65ff1d2c524fd6e233f")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'ImuExtended)))
   "Returns md5sum for a message object of type 'ImuExtended"
-  "b94728e8c9a2b6b4dbb2f39d36c69d58")
+  "d610238899c9b65ff1d2c524fd6e233f")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<ImuExtended>)))
   "Returns full string definition for message of type '<ImuExtended>"
-  (cl:format cl:nil "std_msgs/Header header~%float64 acc_x~%float64 acc_y~%float64 acc_z~%float64 angular_velocity_roll~%float64 angular_velocity_pitch~%float64 angular_velocity_yaw~%float64 angle_roll~%float64 angle_pitch~%float64 angle_yaw~%~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%string frame_id~%~%~%"))
+  (cl:format cl:nil "std_msgs/Header header~%float64 acc_x~%float64 acc_y~%float64 acc_z~%float64 angular_velocity_x~%float64 angular_velocity_y~%float64 angular_velocity_z~%float64 magnetic_x~%float64 magnetic_y~%float64 magnetic_z~%~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%string frame_id~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'ImuExtended)))
   "Returns full string definition for message of type 'ImuExtended"
-  (cl:format cl:nil "std_msgs/Header header~%float64 acc_x~%float64 acc_y~%float64 acc_z~%float64 angular_velocity_roll~%float64 angular_velocity_pitch~%float64 angular_velocity_yaw~%float64 angle_roll~%float64 angle_pitch~%float64 angle_yaw~%~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%string frame_id~%~%~%"))
+  (cl:format cl:nil "std_msgs/Header header~%float64 acc_x~%float64 acc_y~%float64 acc_z~%float64 angular_velocity_x~%float64 angular_velocity_y~%float64 angular_velocity_z~%float64 magnetic_x~%float64 magnetic_y~%float64 magnetic_z~%~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%string frame_id~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <ImuExtended>))
   (cl:+ 0
      (roslisp-msg-protocol:serialization-length (cl:slot-value msg 'header))
@@ -334,10 +334,10 @@
     (cl:cons ':acc_x (acc_x msg))
     (cl:cons ':acc_y (acc_y msg))
     (cl:cons ':acc_z (acc_z msg))
-    (cl:cons ':angular_velocity_roll (angular_velocity_roll msg))
-    (cl:cons ':angular_velocity_pitch (angular_velocity_pitch msg))
-    (cl:cons ':angular_velocity_yaw (angular_velocity_yaw msg))
-    (cl:cons ':angle_roll (angle_roll msg))
-    (cl:cons ':angle_pitch (angle_pitch msg))
-    (cl:cons ':angle_yaw (angle_yaw msg))
+    (cl:cons ':angular_velocity_x (angular_velocity_x msg))
+    (cl:cons ':angular_velocity_y (angular_velocity_y msg))
+    (cl:cons ':angular_velocity_z (angular_velocity_z msg))
+    (cl:cons ':magnetic_x (magnetic_x msg))
+    (cl:cons ':magnetic_y (magnetic_y msg))
+    (cl:cons ':magnetic_z (magnetic_z msg))
 ))

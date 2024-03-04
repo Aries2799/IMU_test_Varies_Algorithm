@@ -9,19 +9,19 @@ import struct
 import std_msgs.msg
 
 class ImuExtended(genpy.Message):
-  _md5sum = "b94728e8c9a2b6b4dbb2f39d36c69d58"
+  _md5sum = "d610238899c9b65ff1d2c524fd6e233f"
   _type = "imu_yesense_ros/ImuExtended"
   _has_header = True  # flag to mark the presence of a Header object
   _full_text = """std_msgs/Header header
 float64 acc_x
 float64 acc_y
 float64 acc_z
-float64 angular_velocity_roll
-float64 angular_velocity_pitch
-float64 angular_velocity_yaw
-float64 angle_roll
-float64 angle_pitch
-float64 angle_yaw
+float64 angular_velocity_x
+float64 angular_velocity_y
+float64 angular_velocity_z
+float64 magnetic_x
+float64 magnetic_y
+float64 magnetic_z
 
 ================================================================================
 MSG: std_msgs/Header
@@ -39,7 +39,7 @@ time stamp
 #Frame this data is associated with
 string frame_id
 """
-  __slots__ = ['header','acc_x','acc_y','acc_z','angular_velocity_roll','angular_velocity_pitch','angular_velocity_yaw','angle_roll','angle_pitch','angle_yaw']
+  __slots__ = ['header','acc_x','acc_y','acc_z','angular_velocity_x','angular_velocity_y','angular_velocity_z','magnetic_x','magnetic_y','magnetic_z']
   _slot_types = ['std_msgs/Header','float64','float64','float64','float64','float64','float64','float64','float64','float64']
 
   def __init__(self, *args, **kwds):
@@ -50,7 +50,7 @@ string frame_id
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       header,acc_x,acc_y,acc_z,angular_velocity_roll,angular_velocity_pitch,angular_velocity_yaw,angle_roll,angle_pitch,angle_yaw
+       header,acc_x,acc_y,acc_z,angular_velocity_x,angular_velocity_y,angular_velocity_z,magnetic_x,magnetic_y,magnetic_z
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -67,29 +67,29 @@ string frame_id
         self.acc_y = 0.
       if self.acc_z is None:
         self.acc_z = 0.
-      if self.angular_velocity_roll is None:
-        self.angular_velocity_roll = 0.
-      if self.angular_velocity_pitch is None:
-        self.angular_velocity_pitch = 0.
-      if self.angular_velocity_yaw is None:
-        self.angular_velocity_yaw = 0.
-      if self.angle_roll is None:
-        self.angle_roll = 0.
-      if self.angle_pitch is None:
-        self.angle_pitch = 0.
-      if self.angle_yaw is None:
-        self.angle_yaw = 0.
+      if self.angular_velocity_x is None:
+        self.angular_velocity_x = 0.
+      if self.angular_velocity_y is None:
+        self.angular_velocity_y = 0.
+      if self.angular_velocity_z is None:
+        self.angular_velocity_z = 0.
+      if self.magnetic_x is None:
+        self.magnetic_x = 0.
+      if self.magnetic_y is None:
+        self.magnetic_y = 0.
+      if self.magnetic_z is None:
+        self.magnetic_z = 0.
     else:
       self.header = std_msgs.msg.Header()
       self.acc_x = 0.
       self.acc_y = 0.
       self.acc_z = 0.
-      self.angular_velocity_roll = 0.
-      self.angular_velocity_pitch = 0.
-      self.angular_velocity_yaw = 0.
-      self.angle_roll = 0.
-      self.angle_pitch = 0.
-      self.angle_yaw = 0.
+      self.angular_velocity_x = 0.
+      self.angular_velocity_y = 0.
+      self.angular_velocity_z = 0.
+      self.magnetic_x = 0.
+      self.magnetic_y = 0.
+      self.magnetic_z = 0.
 
   def _get_types(self):
     """
@@ -112,7 +112,7 @@ string frame_id
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_9d().pack(_x.acc_x, _x.acc_y, _x.acc_z, _x.angular_velocity_roll, _x.angular_velocity_pitch, _x.angular_velocity_yaw, _x.angle_roll, _x.angle_pitch, _x.angle_yaw))
+      buff.write(_get_struct_9d().pack(_x.acc_x, _x.acc_y, _x.acc_z, _x.angular_velocity_x, _x.angular_velocity_y, _x.angular_velocity_z, _x.magnetic_x, _x.magnetic_y, _x.magnetic_z))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -143,7 +143,7 @@ string frame_id
       _x = self
       start = end
       end += 72
-      (_x.acc_x, _x.acc_y, _x.acc_z, _x.angular_velocity_roll, _x.angular_velocity_pitch, _x.angular_velocity_yaw, _x.angle_roll, _x.angle_pitch, _x.angle_yaw,) = _get_struct_9d().unpack(str[start:end])
+      (_x.acc_x, _x.acc_y, _x.acc_z, _x.angular_velocity_x, _x.angular_velocity_y, _x.angular_velocity_z, _x.magnetic_x, _x.magnetic_y, _x.magnetic_z,) = _get_struct_9d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -165,7 +165,7 @@ string frame_id
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_9d().pack(_x.acc_x, _x.acc_y, _x.acc_z, _x.angular_velocity_roll, _x.angular_velocity_pitch, _x.angular_velocity_yaw, _x.angle_roll, _x.angle_pitch, _x.angle_yaw))
+      buff.write(_get_struct_9d().pack(_x.acc_x, _x.acc_y, _x.acc_z, _x.angular_velocity_x, _x.angular_velocity_y, _x.angular_velocity_z, _x.magnetic_x, _x.magnetic_y, _x.magnetic_z))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -197,7 +197,7 @@ string frame_id
       _x = self
       start = end
       end += 72
-      (_x.acc_x, _x.acc_y, _x.acc_z, _x.angular_velocity_roll, _x.angular_velocity_pitch, _x.angular_velocity_yaw, _x.angle_roll, _x.angle_pitch, _x.angle_yaw,) = _get_struct_9d().unpack(str[start:end])
+      (_x.acc_x, _x.acc_y, _x.acc_z, _x.angular_velocity_x, _x.angular_velocity_y, _x.angular_velocity_z, _x.magnetic_x, _x.magnetic_y, _x.magnetic_z,) = _get_struct_9d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill

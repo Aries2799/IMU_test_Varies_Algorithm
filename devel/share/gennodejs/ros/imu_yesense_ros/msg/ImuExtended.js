@@ -23,12 +23,12 @@ class ImuExtended {
       this.acc_x = null;
       this.acc_y = null;
       this.acc_z = null;
-      this.angular_velocity_roll = null;
-      this.angular_velocity_pitch = null;
-      this.angular_velocity_yaw = null;
-      this.angle_roll = null;
-      this.angle_pitch = null;
-      this.angle_yaw = null;
+      this.angular_velocity_x = null;
+      this.angular_velocity_y = null;
+      this.angular_velocity_z = null;
+      this.magnetic_x = null;
+      this.magnetic_y = null;
+      this.magnetic_z = null;
     }
     else {
       if (initObj.hasOwnProperty('header')) {
@@ -55,41 +55,41 @@ class ImuExtended {
       else {
         this.acc_z = 0.0;
       }
-      if (initObj.hasOwnProperty('angular_velocity_roll')) {
-        this.angular_velocity_roll = initObj.angular_velocity_roll
+      if (initObj.hasOwnProperty('angular_velocity_x')) {
+        this.angular_velocity_x = initObj.angular_velocity_x
       }
       else {
-        this.angular_velocity_roll = 0.0;
+        this.angular_velocity_x = 0.0;
       }
-      if (initObj.hasOwnProperty('angular_velocity_pitch')) {
-        this.angular_velocity_pitch = initObj.angular_velocity_pitch
-      }
-      else {
-        this.angular_velocity_pitch = 0.0;
-      }
-      if (initObj.hasOwnProperty('angular_velocity_yaw')) {
-        this.angular_velocity_yaw = initObj.angular_velocity_yaw
+      if (initObj.hasOwnProperty('angular_velocity_y')) {
+        this.angular_velocity_y = initObj.angular_velocity_y
       }
       else {
-        this.angular_velocity_yaw = 0.0;
+        this.angular_velocity_y = 0.0;
       }
-      if (initObj.hasOwnProperty('angle_roll')) {
-        this.angle_roll = initObj.angle_roll
-      }
-      else {
-        this.angle_roll = 0.0;
-      }
-      if (initObj.hasOwnProperty('angle_pitch')) {
-        this.angle_pitch = initObj.angle_pitch
+      if (initObj.hasOwnProperty('angular_velocity_z')) {
+        this.angular_velocity_z = initObj.angular_velocity_z
       }
       else {
-        this.angle_pitch = 0.0;
+        this.angular_velocity_z = 0.0;
       }
-      if (initObj.hasOwnProperty('angle_yaw')) {
-        this.angle_yaw = initObj.angle_yaw
+      if (initObj.hasOwnProperty('magnetic_x')) {
+        this.magnetic_x = initObj.magnetic_x
       }
       else {
-        this.angle_yaw = 0.0;
+        this.magnetic_x = 0.0;
+      }
+      if (initObj.hasOwnProperty('magnetic_y')) {
+        this.magnetic_y = initObj.magnetic_y
+      }
+      else {
+        this.magnetic_y = 0.0;
+      }
+      if (initObj.hasOwnProperty('magnetic_z')) {
+        this.magnetic_z = initObj.magnetic_z
+      }
+      else {
+        this.magnetic_z = 0.0;
       }
     }
   }
@@ -104,18 +104,18 @@ class ImuExtended {
     bufferOffset = _serializer.float64(obj.acc_y, buffer, bufferOffset);
     // Serialize message field [acc_z]
     bufferOffset = _serializer.float64(obj.acc_z, buffer, bufferOffset);
-    // Serialize message field [angular_velocity_roll]
-    bufferOffset = _serializer.float64(obj.angular_velocity_roll, buffer, bufferOffset);
-    // Serialize message field [angular_velocity_pitch]
-    bufferOffset = _serializer.float64(obj.angular_velocity_pitch, buffer, bufferOffset);
-    // Serialize message field [angular_velocity_yaw]
-    bufferOffset = _serializer.float64(obj.angular_velocity_yaw, buffer, bufferOffset);
-    // Serialize message field [angle_roll]
-    bufferOffset = _serializer.float64(obj.angle_roll, buffer, bufferOffset);
-    // Serialize message field [angle_pitch]
-    bufferOffset = _serializer.float64(obj.angle_pitch, buffer, bufferOffset);
-    // Serialize message field [angle_yaw]
-    bufferOffset = _serializer.float64(obj.angle_yaw, buffer, bufferOffset);
+    // Serialize message field [angular_velocity_x]
+    bufferOffset = _serializer.float64(obj.angular_velocity_x, buffer, bufferOffset);
+    // Serialize message field [angular_velocity_y]
+    bufferOffset = _serializer.float64(obj.angular_velocity_y, buffer, bufferOffset);
+    // Serialize message field [angular_velocity_z]
+    bufferOffset = _serializer.float64(obj.angular_velocity_z, buffer, bufferOffset);
+    // Serialize message field [magnetic_x]
+    bufferOffset = _serializer.float64(obj.magnetic_x, buffer, bufferOffset);
+    // Serialize message field [magnetic_y]
+    bufferOffset = _serializer.float64(obj.magnetic_y, buffer, bufferOffset);
+    // Serialize message field [magnetic_z]
+    bufferOffset = _serializer.float64(obj.magnetic_z, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -131,18 +131,18 @@ class ImuExtended {
     data.acc_y = _deserializer.float64(buffer, bufferOffset);
     // Deserialize message field [acc_z]
     data.acc_z = _deserializer.float64(buffer, bufferOffset);
-    // Deserialize message field [angular_velocity_roll]
-    data.angular_velocity_roll = _deserializer.float64(buffer, bufferOffset);
-    // Deserialize message field [angular_velocity_pitch]
-    data.angular_velocity_pitch = _deserializer.float64(buffer, bufferOffset);
-    // Deserialize message field [angular_velocity_yaw]
-    data.angular_velocity_yaw = _deserializer.float64(buffer, bufferOffset);
-    // Deserialize message field [angle_roll]
-    data.angle_roll = _deserializer.float64(buffer, bufferOffset);
-    // Deserialize message field [angle_pitch]
-    data.angle_pitch = _deserializer.float64(buffer, bufferOffset);
-    // Deserialize message field [angle_yaw]
-    data.angle_yaw = _deserializer.float64(buffer, bufferOffset);
+    // Deserialize message field [angular_velocity_x]
+    data.angular_velocity_x = _deserializer.float64(buffer, bufferOffset);
+    // Deserialize message field [angular_velocity_y]
+    data.angular_velocity_y = _deserializer.float64(buffer, bufferOffset);
+    // Deserialize message field [angular_velocity_z]
+    data.angular_velocity_z = _deserializer.float64(buffer, bufferOffset);
+    // Deserialize message field [magnetic_x]
+    data.magnetic_x = _deserializer.float64(buffer, bufferOffset);
+    // Deserialize message field [magnetic_y]
+    data.magnetic_y = _deserializer.float64(buffer, bufferOffset);
+    // Deserialize message field [magnetic_z]
+    data.magnetic_z = _deserializer.float64(buffer, bufferOffset);
     return data;
   }
 
@@ -159,7 +159,7 @@ class ImuExtended {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'b94728e8c9a2b6b4dbb2f39d36c69d58';
+    return 'd610238899c9b65ff1d2c524fd6e233f';
   }
 
   static messageDefinition() {
@@ -169,12 +169,12 @@ class ImuExtended {
     float64 acc_x
     float64 acc_y
     float64 acc_z
-    float64 angular_velocity_roll
-    float64 angular_velocity_pitch
-    float64 angular_velocity_yaw
-    float64 angle_roll
-    float64 angle_pitch
-    float64 angle_yaw
+    float64 angular_velocity_x
+    float64 angular_velocity_y
+    float64 angular_velocity_z
+    float64 magnetic_x
+    float64 magnetic_y
+    float64 magnetic_z
     
     ================================================================================
     MSG: std_msgs/Header
@@ -229,46 +229,46 @@ class ImuExtended {
       resolved.acc_z = 0.0
     }
 
-    if (msg.angular_velocity_roll !== undefined) {
-      resolved.angular_velocity_roll = msg.angular_velocity_roll;
+    if (msg.angular_velocity_x !== undefined) {
+      resolved.angular_velocity_x = msg.angular_velocity_x;
     }
     else {
-      resolved.angular_velocity_roll = 0.0
+      resolved.angular_velocity_x = 0.0
     }
 
-    if (msg.angular_velocity_pitch !== undefined) {
-      resolved.angular_velocity_pitch = msg.angular_velocity_pitch;
+    if (msg.angular_velocity_y !== undefined) {
+      resolved.angular_velocity_y = msg.angular_velocity_y;
     }
     else {
-      resolved.angular_velocity_pitch = 0.0
+      resolved.angular_velocity_y = 0.0
     }
 
-    if (msg.angular_velocity_yaw !== undefined) {
-      resolved.angular_velocity_yaw = msg.angular_velocity_yaw;
+    if (msg.angular_velocity_z !== undefined) {
+      resolved.angular_velocity_z = msg.angular_velocity_z;
     }
     else {
-      resolved.angular_velocity_yaw = 0.0
+      resolved.angular_velocity_z = 0.0
     }
 
-    if (msg.angle_roll !== undefined) {
-      resolved.angle_roll = msg.angle_roll;
+    if (msg.magnetic_x !== undefined) {
+      resolved.magnetic_x = msg.magnetic_x;
     }
     else {
-      resolved.angle_roll = 0.0
+      resolved.magnetic_x = 0.0
     }
 
-    if (msg.angle_pitch !== undefined) {
-      resolved.angle_pitch = msg.angle_pitch;
+    if (msg.magnetic_y !== undefined) {
+      resolved.magnetic_y = msg.magnetic_y;
     }
     else {
-      resolved.angle_pitch = 0.0
+      resolved.magnetic_y = 0.0
     }
 
-    if (msg.angle_yaw !== undefined) {
-      resolved.angle_yaw = msg.angle_yaw;
+    if (msg.magnetic_z !== undefined) {
+      resolved.magnetic_z = msg.magnetic_z;
     }
     else {
-      resolved.angle_yaw = 0.0
+      resolved.magnetic_z = 0.0
     }
 
     return resolved;
