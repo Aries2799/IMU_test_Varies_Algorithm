@@ -19,7 +19,7 @@ int main(int argc, char **argv){
   imu_sensor->startWork();
 
   imu_sensor->onMessageReceived = [&](ImuData imu_data){
-    if(count % 200 == 0){
+    if(count % 1 == 0){
       clock_gettime(CLOCK_MONOTONIC, &timestamp);
 
       imu_yesense_ros::ImuExtended imu_extended_msg;
