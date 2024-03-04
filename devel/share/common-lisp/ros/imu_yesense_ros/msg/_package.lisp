@@ -3,5 +3,7 @@
   (:export
    "<IMUEXTENDED>"
    "IMUEXTENDED"
+   "<ATTITUDE>"
+   "ATTITUDE"
   ))
 

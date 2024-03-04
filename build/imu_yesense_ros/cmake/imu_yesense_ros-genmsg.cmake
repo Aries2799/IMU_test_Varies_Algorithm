@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "imu_yesense_ros: 1 messages, 0 services")
+message(STATUS "imu_yesense_ros: 2 messages, 0 services")
 
 set(MSG_I_FLAGS "-Iimu_yesense_ros:/home/zxy/IMU_test/src/imu_yesense_ros/msg;-Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg;-Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg")
 
@@ -22,6 +22,11 @@ add_custom_target(_imu_yesense_ros_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "imu_yesense_ros" "/home/zxy/IMU_test/src/imu_yesense_ros/msg/ImuExtended.msg" "std_msgs/Header"
 )
 
+get_filename_component(_filename "/home/zxy/IMU_test/src/imu_yesense_ros/msg/attitude.msg" NAME_WE)
+add_custom_target(_imu_yesense_ros_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "imu_yesense_ros" "/home/zxy/IMU_test/src/imu_yesense_ros/msg/attitude.msg" "std_msgs/Header"
+)
+
 #
 #  langs = gencpp;geneus;genlisp;gennodejs;genpy
 #
@@ -30,6 +35,12 @@ add_custom_target(_imu_yesense_ros_generate_messages_check_deps_${_filename}
 ### Generating Messages
 _generate_msg_cpp(imu_yesense_ros
   "/home/zxy/IMU_test/src/imu_yesense_ros/msg/ImuExtended.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/imu_yesense_ros
+)
+_generate_msg_cpp(imu_yesense_ros
+  "/home/zxy/IMU_test/src/imu_yesense_ros/msg/attitude.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/imu_yesense_ros
@@ -51,6 +62,8 @@ add_dependencies(imu_yesense_ros_generate_messages imu_yesense_ros_generate_mess
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/zxy/IMU_test/src/imu_yesense_ros/msg/ImuExtended.msg" NAME_WE)
 add_dependencies(imu_yesense_ros_generate_messages_cpp _imu_yesense_ros_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/zxy/IMU_test/src/imu_yesense_ros/msg/attitude.msg" NAME_WE)
+add_dependencies(imu_yesense_ros_generate_messages_cpp _imu_yesense_ros_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(imu_yesense_ros_gencpp)
@@ -63,6 +76,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS imu_yesense_ros_generate_messages_c
 ### Generating Messages
 _generate_msg_eus(imu_yesense_ros
   "/home/zxy/IMU_test/src/imu_yesense_ros/msg/ImuExtended.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/imu_yesense_ros
+)
+_generate_msg_eus(imu_yesense_ros
+  "/home/zxy/IMU_test/src/imu_yesense_ros/msg/attitude.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/imu_yesense_ros
@@ -84,6 +103,8 @@ add_dependencies(imu_yesense_ros_generate_messages imu_yesense_ros_generate_mess
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/zxy/IMU_test/src/imu_yesense_ros/msg/ImuExtended.msg" NAME_WE)
 add_dependencies(imu_yesense_ros_generate_messages_eus _imu_yesense_ros_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/zxy/IMU_test/src/imu_yesense_ros/msg/attitude.msg" NAME_WE)
+add_dependencies(imu_yesense_ros_generate_messages_eus _imu_yesense_ros_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(imu_yesense_ros_geneus)
@@ -96,6 +117,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS imu_yesense_ros_generate_messages_e
 ### Generating Messages
 _generate_msg_lisp(imu_yesense_ros
   "/home/zxy/IMU_test/src/imu_yesense_ros/msg/ImuExtended.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/imu_yesense_ros
+)
+_generate_msg_lisp(imu_yesense_ros
+  "/home/zxy/IMU_test/src/imu_yesense_ros/msg/attitude.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/imu_yesense_ros
@@ -117,6 +144,8 @@ add_dependencies(imu_yesense_ros_generate_messages imu_yesense_ros_generate_mess
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/zxy/IMU_test/src/imu_yesense_ros/msg/ImuExtended.msg" NAME_WE)
 add_dependencies(imu_yesense_ros_generate_messages_lisp _imu_yesense_ros_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/zxy/IMU_test/src/imu_yesense_ros/msg/attitude.msg" NAME_WE)
+add_dependencies(imu_yesense_ros_generate_messages_lisp _imu_yesense_ros_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(imu_yesense_ros_genlisp)
@@ -129,6 +158,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS imu_yesense_ros_generate_messages_l
 ### Generating Messages
 _generate_msg_nodejs(imu_yesense_ros
   "/home/zxy/IMU_test/src/imu_yesense_ros/msg/ImuExtended.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/imu_yesense_ros
+)
+_generate_msg_nodejs(imu_yesense_ros
+  "/home/zxy/IMU_test/src/imu_yesense_ros/msg/attitude.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/imu_yesense_ros
@@ -150,6 +185,8 @@ add_dependencies(imu_yesense_ros_generate_messages imu_yesense_ros_generate_mess
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/zxy/IMU_test/src/imu_yesense_ros/msg/ImuExtended.msg" NAME_WE)
 add_dependencies(imu_yesense_ros_generate_messages_nodejs _imu_yesense_ros_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/zxy/IMU_test/src/imu_yesense_ros/msg/attitude.msg" NAME_WE)
+add_dependencies(imu_yesense_ros_generate_messages_nodejs _imu_yesense_ros_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(imu_yesense_ros_gennodejs)
@@ -162,6 +199,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS imu_yesense_ros_generate_messages_n
 ### Generating Messages
 _generate_msg_py(imu_yesense_ros
   "/home/zxy/IMU_test/src/imu_yesense_ros/msg/ImuExtended.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/imu_yesense_ros
+)
+_generate_msg_py(imu_yesense_ros
+  "/home/zxy/IMU_test/src/imu_yesense_ros/msg/attitude.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/imu_yesense_ros
@@ -182,6 +225,8 @@ add_dependencies(imu_yesense_ros_generate_messages imu_yesense_ros_generate_mess
 
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/zxy/IMU_test/src/imu_yesense_ros/msg/ImuExtended.msg" NAME_WE)
+add_dependencies(imu_yesense_ros_generate_messages_py _imu_yesense_ros_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/zxy/IMU_test/src/imu_yesense_ros/msg/attitude.msg" NAME_WE)
 add_dependencies(imu_yesense_ros_generate_messages_py _imu_yesense_ros_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "/home/zxy/IMU_test/devel/lib/python3/dist-packages/imu_yesense_ros/msg/_ImuExtended.py"
   "/home/zxy/IMU_test/devel/lib/python3/dist-packages/imu_yesense_ros/msg/__init__.py"
+  "/home/zxy/IMU_test/devel/lib/python3/dist-packages/imu_yesense_ros/msg/_attitude.py"
   "CMakeFiles/imu_yesense_ros_generate_messages_py"
 )
 

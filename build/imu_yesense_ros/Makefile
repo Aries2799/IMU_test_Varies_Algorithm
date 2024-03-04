@@ -258,21 +258,6 @@ imu_yesense_ros_generate_messages_eus/fast:
 .PHONY : imu_yesense_ros_generate_messages_eus/fast
 
 # Convenience name for target.
-imu_yesense_ros/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
-	cd /home/zxy/IMU_test/build && $(MAKE) -f CMakeFiles/Makefile2 imu_yesense_ros/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-.PHONY : imu_yesense_ros/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_py: imu_yesense_ros/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_py
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_py/fast:
-	cd /home/zxy/IMU_test/build && $(MAKE) -f imu_yesense_ros/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make imu_yesense_ros/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
-.PHONY : rosgraph_msgs_generate_messages_py/fast
-
-# Convenience name for target.
 imu_yesense_ros/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
 	cd /home/zxy/IMU_test/build && $(MAKE) -f CMakeFiles/Makefile2 imu_yesense_ros/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
 .PHONY : imu_yesense_ros/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
@@ -498,6 +483,36 @@ roscpp_generate_messages_eus/fast:
 .PHONY : roscpp_generate_messages_eus/fast
 
 # Convenience name for target.
+imu_yesense_ros/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
+	cd /home/zxy/IMU_test/build && $(MAKE) -f CMakeFiles/Makefile2 imu_yesense_ros/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+.PHONY : imu_yesense_ros/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_py: imu_yesense_ros/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_py
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_py/fast:
+	cd /home/zxy/IMU_test/build && $(MAKE) -f imu_yesense_ros/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make imu_yesense_ros/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
+.PHONY : rosgraph_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+imu_yesense_ros/CMakeFiles/_imu_yesense_ros_generate_messages_check_deps_attitude.dir/rule:
+	cd /home/zxy/IMU_test/build && $(MAKE) -f CMakeFiles/Makefile2 imu_yesense_ros/CMakeFiles/_imu_yesense_ros_generate_messages_check_deps_attitude.dir/rule
+.PHONY : imu_yesense_ros/CMakeFiles/_imu_yesense_ros_generate_messages_check_deps_attitude.dir/rule
+
+# Convenience name for target.
+_imu_yesense_ros_generate_messages_check_deps_attitude: imu_yesense_ros/CMakeFiles/_imu_yesense_ros_generate_messages_check_deps_attitude.dir/rule
+
+.PHONY : _imu_yesense_ros_generate_messages_check_deps_attitude
+
+# fast build rule for target.
+_imu_yesense_ros_generate_messages_check_deps_attitude/fast:
+	cd /home/zxy/IMU_test/build && $(MAKE) -f imu_yesense_ros/CMakeFiles/_imu_yesense_ros_generate_messages_check_deps_attitude.dir/build.make imu_yesense_ros/CMakeFiles/_imu_yesense_ros_generate_messages_check_deps_attitude.dir/build
+.PHONY : _imu_yesense_ros_generate_messages_check_deps_attitude/fast
+
+# Convenience name for target.
 imu_yesense_ros/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
 	cd /home/zxy/IMU_test/build && $(MAKE) -f CMakeFiles/Makefile2 imu_yesense_ros/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
 .PHONY : imu_yesense_ros/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
@@ -618,6 +633,36 @@ std_msgs_generate_messages_py/fast:
 .PHONY : std_msgs_generate_messages_py/fast
 
 # Convenience name for target.
+imu_yesense_ros/CMakeFiles/imu_yesense_ros_gencpp.dir/rule:
+	cd /home/zxy/IMU_test/build && $(MAKE) -f CMakeFiles/Makefile2 imu_yesense_ros/CMakeFiles/imu_yesense_ros_gencpp.dir/rule
+.PHONY : imu_yesense_ros/CMakeFiles/imu_yesense_ros_gencpp.dir/rule
+
+# Convenience name for target.
+imu_yesense_ros_gencpp: imu_yesense_ros/CMakeFiles/imu_yesense_ros_gencpp.dir/rule
+
+.PHONY : imu_yesense_ros_gencpp
+
+# fast build rule for target.
+imu_yesense_ros_gencpp/fast:
+	cd /home/zxy/IMU_test/build && $(MAKE) -f imu_yesense_ros/CMakeFiles/imu_yesense_ros_gencpp.dir/build.make imu_yesense_ros/CMakeFiles/imu_yesense_ros_gencpp.dir/build
+.PHONY : imu_yesense_ros_gencpp/fast
+
+# Convenience name for target.
+imu_yesense_ros/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
+	cd /home/zxy/IMU_test/build && $(MAKE) -f CMakeFiles/Makefile2 imu_yesense_ros/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+.PHONY : imu_yesense_ros/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_cpp: imu_yesense_ros/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_cpp
+
+# fast build rule for target.
+sensor_msgs_generate_messages_cpp/fast:
+	cd /home/zxy/IMU_test/build && $(MAKE) -f imu_yesense_ros/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make imu_yesense_ros/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
+.PHONY : sensor_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
 imu_yesense_ros/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
 	cd /home/zxy/IMU_test/build && $(MAKE) -f CMakeFiles/Makefile2 imu_yesense_ros/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
 .PHONY : imu_yesense_ros/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
@@ -706,36 +751,6 @@ _imu_yesense_ros_generate_messages_check_deps_ImuExtended: imu_yesense_ros/CMake
 _imu_yesense_ros_generate_messages_check_deps_ImuExtended/fast:
 	cd /home/zxy/IMU_test/build && $(MAKE) -f imu_yesense_ros/CMakeFiles/_imu_yesense_ros_generate_messages_check_deps_ImuExtended.dir/build.make imu_yesense_ros/CMakeFiles/_imu_yesense_ros_generate_messages_check_deps_ImuExtended.dir/build
 .PHONY : _imu_yesense_ros_generate_messages_check_deps_ImuExtended/fast
-
-# Convenience name for target.
-imu_yesense_ros/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
-	cd /home/zxy/IMU_test/build && $(MAKE) -f CMakeFiles/Makefile2 imu_yesense_ros/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-.PHONY : imu_yesense_ros/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_cpp: imu_yesense_ros/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_cpp
-
-# fast build rule for target.
-sensor_msgs_generate_messages_cpp/fast:
-	cd /home/zxy/IMU_test/build && $(MAKE) -f imu_yesense_ros/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make imu_yesense_ros/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
-.PHONY : sensor_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-imu_yesense_ros/CMakeFiles/imu_yesense_ros_gencpp.dir/rule:
-	cd /home/zxy/IMU_test/build && $(MAKE) -f CMakeFiles/Makefile2 imu_yesense_ros/CMakeFiles/imu_yesense_ros_gencpp.dir/rule
-.PHONY : imu_yesense_ros/CMakeFiles/imu_yesense_ros_gencpp.dir/rule
-
-# Convenience name for target.
-imu_yesense_ros_gencpp: imu_yesense_ros/CMakeFiles/imu_yesense_ros_gencpp.dir/rule
-
-.PHONY : imu_yesense_ros_gencpp
-
-# fast build rule for target.
-imu_yesense_ros_gencpp/fast:
-	cd /home/zxy/IMU_test/build && $(MAKE) -f imu_yesense_ros/CMakeFiles/imu_yesense_ros_gencpp.dir/build.make imu_yesense_ros/CMakeFiles/imu_yesense_ros_gencpp.dir/build
-.PHONY : imu_yesense_ros_gencpp/fast
 
 src/AttitudeCalculator.o: src/AttitudeCalculator.cpp.o
 
@@ -888,7 +903,6 @@ help:
 	@echo "... imu_yesense_ros_generate_messages_lisp"
 	@echo "... imu_yesense_ros_geneus"
 	@echo "... imu_yesense_ros_generate_messages_eus"
-	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_nodejs"
@@ -907,6 +921,8 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
 	@echo "... rebuild_cache"
 	@echo "... roscpp_generate_messages_eus"
+	@echo "... rosgraph_msgs_generate_messages_py"
+	@echo "... _imu_yesense_ros_generate_messages_check_deps_attitude"
 	@echo "... sensor_msgs_generate_messages_eus"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_py"
@@ -915,14 +931,14 @@ help:
 	@echo "... imu_yesense_ros_generate_messages_cpp"
 	@echo "... imu_yesense_ros_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_py"
+	@echo "... imu_yesense_ros_gencpp"
+	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... imu_yesense_ros_genpy"
 	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... imu_yesense_ros_generate_messages"
 	@echo "... _imu_yesense_ros_generate_messages_check_deps_ImuExtended"
-	@echo "... sensor_msgs_generate_messages_cpp"
-	@echo "... imu_yesense_ros_gencpp"
 	@echo "... src/AttitudeCalculator.o"
 	@echo "... src/AttitudeCalculator.i"
 	@echo "... src/AttitudeCalculator.s"

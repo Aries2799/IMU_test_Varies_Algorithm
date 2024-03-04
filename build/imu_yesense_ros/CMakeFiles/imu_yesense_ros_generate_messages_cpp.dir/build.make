@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/zxy/IMU_test/build
 include imu_yesense_ros/CMakeFiles/imu_yesense_ros_generate_messages_cpp.dir/progress.make
 
 imu_yesense_ros/CMakeFiles/imu_yesense_ros_generate_messages_cpp: /home/zxy/IMU_test/devel/include/imu_yesense_ros/ImuExtended.h
+imu_yesense_ros/CMakeFiles/imu_yesense_ros_generate_messages_cpp: /home/zxy/IMU_test/devel/include/imu_yesense_ros/attitude.h
 
 
 /home/zxy/IMU_test/devel/include/imu_yesense_ros/ImuExtended.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
@@ -63,8 +64,16 @@ imu_yesense_ros/CMakeFiles/imu_yesense_ros_generate_messages_cpp: /home/zxy/IMU_
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zxy/IMU_test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from imu_yesense_ros/ImuExtended.msg"
 	cd /home/zxy/IMU_test/src/imu_yesense_ros && /home/zxy/IMU_test/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/zxy/IMU_test/src/imu_yesense_ros/msg/ImuExtended.msg -Iimu_yesense_ros:/home/zxy/IMU_test/src/imu_yesense_ros/msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p imu_yesense_ros -o /home/zxy/IMU_test/devel/include/imu_yesense_ros -e /opt/ros/noetic/share/gencpp/cmake/..
 
+/home/zxy/IMU_test/devel/include/imu_yesense_ros/attitude.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
+/home/zxy/IMU_test/devel/include/imu_yesense_ros/attitude.h: /home/zxy/IMU_test/src/imu_yesense_ros/msg/attitude.msg
+/home/zxy/IMU_test/devel/include/imu_yesense_ros/attitude.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/zxy/IMU_test/devel/include/imu_yesense_ros/attitude.h: /opt/ros/noetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zxy/IMU_test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from imu_yesense_ros/attitude.msg"
+	cd /home/zxy/IMU_test/src/imu_yesense_ros && /home/zxy/IMU_test/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/zxy/IMU_test/src/imu_yesense_ros/msg/attitude.msg -Iimu_yesense_ros:/home/zxy/IMU_test/src/imu_yesense_ros/msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p imu_yesense_ros -o /home/zxy/IMU_test/devel/include/imu_yesense_ros -e /opt/ros/noetic/share/gencpp/cmake/..
+
 imu_yesense_ros_generate_messages_cpp: imu_yesense_ros/CMakeFiles/imu_yesense_ros_generate_messages_cpp
 imu_yesense_ros_generate_messages_cpp: /home/zxy/IMU_test/devel/include/imu_yesense_ros/ImuExtended.h
+imu_yesense_ros_generate_messages_cpp: /home/zxy/IMU_test/devel/include/imu_yesense_ros/attitude.h
 imu_yesense_ros_generate_messages_cpp: imu_yesense_ros/CMakeFiles/imu_yesense_ros_generate_messages_cpp.dir/build.make
 
 .PHONY : imu_yesense_ros_generate_messages_cpp

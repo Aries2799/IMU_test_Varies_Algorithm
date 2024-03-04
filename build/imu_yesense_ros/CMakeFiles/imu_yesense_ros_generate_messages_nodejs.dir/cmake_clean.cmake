@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "/home/zxy/IMU_test/devel/share/gennodejs/ros/imu_yesense_ros/msg/ImuExtended.js"
+  "/home/zxy/IMU_test/devel/share/gennodejs/ros/imu_yesense_ros/msg/attitude.js"
   "CMakeFiles/imu_yesense_ros_generate_messages_nodejs"
 )
 

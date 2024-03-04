@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/zxy/IMU_test/build
 include imu_yesense_ros/CMakeFiles/imu_yesense_ros_generate_messages_py.dir/progress.make
 
 imu_yesense_ros/CMakeFiles/imu_yesense_ros_generate_messages_py: /home/zxy/IMU_test/devel/lib/python3/dist-packages/imu_yesense_ros/msg/_ImuExtended.py
+imu_yesense_ros/CMakeFiles/imu_yesense_ros_generate_messages_py: /home/zxy/IMU_test/devel/lib/python3/dist-packages/imu_yesense_ros/msg/_attitude.py
 imu_yesense_ros/CMakeFiles/imu_yesense_ros_generate_messages_py: /home/zxy/IMU_test/devel/lib/python3/dist-packages/imu_yesense_ros/msg/__init__.py
 
 
@@ -63,13 +64,21 @@ imu_yesense_ros/CMakeFiles/imu_yesense_ros_generate_messages_py: /home/zxy/IMU_t
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zxy/IMU_test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG imu_yesense_ros/ImuExtended"
 	cd /home/zxy/IMU_test/build/imu_yesense_ros && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/zxy/IMU_test/src/imu_yesense_ros/msg/ImuExtended.msg -Iimu_yesense_ros:/home/zxy/IMU_test/src/imu_yesense_ros/msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p imu_yesense_ros -o /home/zxy/IMU_test/devel/lib/python3/dist-packages/imu_yesense_ros/msg
 
+/home/zxy/IMU_test/devel/lib/python3/dist-packages/imu_yesense_ros/msg/_attitude.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/zxy/IMU_test/devel/lib/python3/dist-packages/imu_yesense_ros/msg/_attitude.py: /home/zxy/IMU_test/src/imu_yesense_ros/msg/attitude.msg
+/home/zxy/IMU_test/devel/lib/python3/dist-packages/imu_yesense_ros/msg/_attitude.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zxy/IMU_test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG imu_yesense_ros/attitude"
+	cd /home/zxy/IMU_test/build/imu_yesense_ros && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/zxy/IMU_test/src/imu_yesense_ros/msg/attitude.msg -Iimu_yesense_ros:/home/zxy/IMU_test/src/imu_yesense_ros/msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p imu_yesense_ros -o /home/zxy/IMU_test/devel/lib/python3/dist-packages/imu_yesense_ros/msg
+
 /home/zxy/IMU_test/devel/lib/python3/dist-packages/imu_yesense_ros/msg/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
 /home/zxy/IMU_test/devel/lib/python3/dist-packages/imu_yesense_ros/msg/__init__.py: /home/zxy/IMU_test/devel/lib/python3/dist-packages/imu_yesense_ros/msg/_ImuExtended.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zxy/IMU_test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python msg __init__.py for imu_yesense_ros"
+/home/zxy/IMU_test/devel/lib/python3/dist-packages/imu_yesense_ros/msg/__init__.py: /home/zxy/IMU_test/devel/lib/python3/dist-packages/imu_yesense_ros/msg/_attitude.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zxy/IMU_test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python msg __init__.py for imu_yesense_ros"
 	cd /home/zxy/IMU_test/build/imu_yesense_ros && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/zxy/IMU_test/devel/lib/python3/dist-packages/imu_yesense_ros/msg --initpy
 
 imu_yesense_ros_generate_messages_py: imu_yesense_ros/CMakeFiles/imu_yesense_ros_generate_messages_py
 imu_yesense_ros_generate_messages_py: /home/zxy/IMU_test/devel/lib/python3/dist-packages/imu_yesense_ros/msg/_ImuExtended.py
+imu_yesense_ros_generate_messages_py: /home/zxy/IMU_test/devel/lib/python3/dist-packages/imu_yesense_ros/msg/_attitude.py
 imu_yesense_ros_generate_messages_py: /home/zxy/IMU_test/devel/lib/python3/dist-packages/imu_yesense_ros/msg/__init__.py
 imu_yesense_ros_generate_messages_py: imu_yesense_ros/CMakeFiles/imu_yesense_ros_generate_messages_py.dir/build.make
 

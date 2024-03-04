@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "/home/zxy/IMU_test/devel/include/imu_yesense_ros/ImuExtended.h"
+  "/home/zxy/IMU_test/devel/include/imu_yesense_ros/attitude.h"
   "CMakeFiles/imu_yesense_ros_generate_messages_cpp"
 )
 

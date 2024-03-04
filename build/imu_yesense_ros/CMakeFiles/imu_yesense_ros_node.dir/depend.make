@@ -10,11 +10,11 @@ imu_yesense_ros/CMakeFiles/imu_yesense_ros_node.dir/src/imu_sensor_yesense.cpp.o
 imu_yesense_ros/CMakeFiles/imu_yesense_ros_node.dir/src/imu_sensor_yesense.cpp.o: /home/zxy/IMU_test/src/imu_yesense_ros/include/rs232_toolkit.h
 imu_yesense_ros/CMakeFiles/imu_yesense_ros_node.dir/src/imu_sensor_yesense.cpp.o: /home/zxy/IMU_test/src/imu_yesense_ros/src/imu_sensor_yesense.cpp
 
+imu_yesense_ros/CMakeFiles/imu_yesense_ros_node.dir/src/main.cpp.o: /home/zxy/IMU_test/devel/include/imu_yesense_ros/attitude.h
 imu_yesense_ros/CMakeFiles/imu_yesense_ros_node.dir/src/main.cpp.o: /home/zxy/IMU_test/src/imu_yesense_ros/include/AttitudeCalculator.h
 imu_yesense_ros/CMakeFiles/imu_yesense_ros_node.dir/src/main.cpp.o: /home/zxy/IMU_test/src/imu_yesense_ros/include/imu_sensor_yesense.h
 imu_yesense_ros/CMakeFiles/imu_yesense_ros_node.dir/src/main.cpp.o: /home/zxy/IMU_test/src/imu_yesense_ros/include/rs232_toolkit.h
 imu_yesense_ros/CMakeFiles/imu_yesense_ros_node.dir/src/main.cpp.o: /home/zxy/IMU_test/src/imu_yesense_ros/src/main.cpp
-imu_yesense_ros/CMakeFiles/imu_yesense_ros_node.dir/src/main.cpp.o: /opt/ros/noetic/include/geometry_msgs/Vector3.h
 imu_yesense_ros/CMakeFiles/imu_yesense_ros_node.dir/src/main.cpp.o: /opt/ros/noetic/include/ros/advertise_options.h
 imu_yesense_ros/CMakeFiles/imu_yesense_ros_node.dir/src/main.cpp.o: /opt/ros/noetic/include/ros/advertise_service_options.h
 imu_yesense_ros/CMakeFiles/imu_yesense_ros_node.dir/src/main.cpp.o: /opt/ros/noetic/include/ros/assert.h
@@ -71,6 +71,7 @@ imu_yesense_ros/CMakeFiles/imu_yesense_ros_node.dir/src/main.cpp.o: /opt/ros/noe
 imu_yesense_ros/CMakeFiles/imu_yesense_ros_node.dir/src/main.cpp.o: /opt/ros/noetic/include/ros/wall_timer.h
 imu_yesense_ros/CMakeFiles/imu_yesense_ros_node.dir/src/main.cpp.o: /opt/ros/noetic/include/ros/wall_timer_options.h
 imu_yesense_ros/CMakeFiles/imu_yesense_ros_node.dir/src/main.cpp.o: /opt/ros/noetic/include/rosconsole/macros_generated.h
+imu_yesense_ros/CMakeFiles/imu_yesense_ros_node.dir/src/main.cpp.o: /opt/ros/noetic/include/std_msgs/Header.h
 imu_yesense_ros/CMakeFiles/imu_yesense_ros_node.dir/src/main.cpp.o: /opt/ros/noetic/include/xmlrpcpp/XmlRpcDecl.h
 imu_yesense_ros/CMakeFiles/imu_yesense_ros_node.dir/src/main.cpp.o: /opt/ros/noetic/include/xmlrpcpp/XmlRpcValue.h
 

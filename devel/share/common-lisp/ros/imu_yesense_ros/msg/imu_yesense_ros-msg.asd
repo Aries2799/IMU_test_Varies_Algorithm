@@ -7,4 +7,6 @@
   :components ((:file "_package")
     (:file "ImuExtended" :depends-on ("_package_ImuExtended"))
     (:file "_package_ImuExtended" :depends-on ("_package"))
+    (:file "attitude" :depends-on ("_package_attitude"))
+    (:file "_package_attitude" :depends-on ("_package"))
   ))

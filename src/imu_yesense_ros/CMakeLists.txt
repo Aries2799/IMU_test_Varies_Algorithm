@@ -18,11 +18,13 @@ find_package(catkin REQUIRED COMPONENTS
 add_message_files(
   FILES
   ImuExtended.msg
+  attitude.msg
 )
 
 generate_messages(
   DEPENDENCIES
   sensor_msgs
+
 )
 
 ## 声明catkin特定配置

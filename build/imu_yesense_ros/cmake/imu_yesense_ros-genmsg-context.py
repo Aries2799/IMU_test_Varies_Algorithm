@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/zxy/IMU_test/src/imu_yesense_ros/msg/ImuExtended.msg"
+messages_str = "/home/zxy/IMU_test/src/imu_yesense_ros/msg/ImuExtended.msg;/home/zxy/IMU_test/src/imu_yesense_ros/msg/attitude.msg"
 services_str = ""
 pkg_name = "imu_yesense_ros"
 dependencies_str = "sensor_msgs"

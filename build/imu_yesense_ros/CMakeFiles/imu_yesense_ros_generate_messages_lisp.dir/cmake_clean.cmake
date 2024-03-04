@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "/home/zxy/IMU_test/devel/share/common-lisp/ros/imu_yesense_ros/msg/ImuExtended.lisp"
+  "/home/zxy/IMU_test/devel/share/common-lisp/ros/imu_yesense_ros/msg/attitude.lisp"
   "CMakeFiles/imu_yesense_ros_generate_messages_lisp"
 )
 
