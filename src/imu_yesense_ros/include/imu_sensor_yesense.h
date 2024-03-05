@@ -41,8 +41,8 @@ typedef struct ImuData{
   union{
     uint8_t buffer_byte[36];
     struct{
-      float angle_roll,angle_pitch,angle_yaw;
-      float angular_velocity_roll,angular_velocity_pitch,angular_velocity_yaw;
+      float magnetic_x,magnetic_y,magnetic_z;
+      float angular_velocity_x,angular_velocity_y,angular_velocity_z;
       float acc_x,acc_y,acc_z;
     };
   };

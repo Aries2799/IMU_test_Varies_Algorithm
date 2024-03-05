@@ -5,7 +5,7 @@
  *      Author: moxiaobo
  */
 
-#include "imu_sensor_yesense.h"
+#include "../include/imu_sensor_yesense.h"
 
 #include "termios.h"
 
@@ -53,12 +53,12 @@ int ImuSensorYesense::set_imu_data(YesenseFrame& frame){
 #endif
   double factor = 1e6;
   double rad = 3.1415926/180;
-  imu_data_.angle_roll             = frame.data.angle.y / factor;
-  imu_data_.angle_pitch            = frame.data.angle.x / factor;
-  imu_data_.angle_yaw              = frame.data.angle.z / factor;
-  imu_data_.angular_velocity_roll  = frame.data.angle_v.x / factor * rad;
-  imu_data_.angular_velocity_pitch = frame.data.angle_v.y / factor * rad;
-  imu_data_.angular_velocity_yaw   = frame.data.angle_v.z / factor * rad;
+  imu_data_.magnetic_x             = frame.data.angle.y / factor;
+  imu_data_.magnetic_y            = frame.data.angle.x / factor;
+  imu_data_.magnetic_z              = frame.data.angle.z / factor;
+  imu_data_.angular_velocity_x  = frame.data.angle_v.x / factor * rad;
+  imu_data_.angular_velocity_y = frame.data.angle_v.y / factor * rad;
+  imu_data_.angular_velocity_z   = frame.data.angle_v.z / factor * rad;
   imu_data_.acc_x                  = frame.data.acc.x / factor;
   imu_data_.acc_y                  = frame.data.acc.y / factor;
   imu_data_.acc_z                  = frame.data.acc.z / factor;
