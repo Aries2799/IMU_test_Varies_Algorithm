@@ -18,13 +18,13 @@ Attitude AttitudeCalculator::getLatestAttitude() const {
 }
 
 void AttitudeCalculator::calculateAttitude(const ImuData& imu_data) {
-    // 确保以下变量已经在您的类中声明和初始化
+    
     double q0 = 1.0, q1 = 0.0, q2 = 0.0, q3 = 0.0;
     double exInt = 0.0, eyInt = 0.0, ezInt = 0.0;
     const double Kp = 0; // 比例增益
     const double Ki = 0 ;// 积分增益
     const double alpha = 0.98; // 互补滤波系数
-    const double dt = 2.5; // 时间差，需要根据实际情况计算或传入
+    const double dt = 0.0025; // 时间差，需要根据实际情况计算或传入
 
     double gx = imu_data.angular_velocity_x ;
     double gy = imu_data.angular_velocity_y ;
@@ -55,10 +55,10 @@ void AttitudeCalculator::calculateAttitude(const ImuData& imu_data) {
     eyInt += ey * Ki * dt;
     ezInt += ez * Ki * dt;
 
-    // 调整陀螺仪测量值
-    gx += Kp * ex + exInt;
-    gy += Kp * ey + eyInt;
-    gz += Kp * ez + ezInt;
+    // 调整陀螺仪测量值，对每个轴进行互补滤波
+    gx = alpha * (gx) + (1 - alpha) * (Kp * (ex) + (exInt));
+    gy = alpha * (gy) + (1 - alpha) * (Kp * (ey) + (eyInt));
+    gz = alpha * (gz) + (1 - alpha) * (Kp * (ez) + (ezInt));
 
     // 四元数积分更新
     double q0Dot = 0.5 * (-q1 * gx - q2 * gy - q3 * gz);
@@ -78,8 +78,7 @@ void AttitudeCalculator::calculateAttitude(const ImuData& imu_data) {
     q2 /= norm;
     q3 /= norm;
 
-    // 更新姿态，这里简化为直接使用四元数转换为欧拉角的公式
-    // 注意：实际实现时可能需要根据四元数到欧拉角转换的具体公式调整
+    // 欧拉角计算
     latest_attitude.pitch = asin(-2 * q1 * q3 + 2 * q0 * q2) * 180.0 / M_PI;
     latest_attitude.roll = atan2(2 * q2 * q3 + 2 * q0 * q1, -2 * q1 * q1 - 2 * q2 * q2 + 1) * 180.0 / M_PI;
     latest_attitude.yaw = atan2(2 * (q1 * q2 + q0 * q3), q0 * q0 + q1 * q1 - q2 * q2 - q3 * q3) * 180.0 / M_PI;
