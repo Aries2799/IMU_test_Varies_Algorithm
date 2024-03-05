@@ -21,10 +21,10 @@ void AttitudeCalculator::calculateAttitude(const ImuData& imu_data) {
     
     double q0 = 1.0, q1 = 0.0, q2 = 0.0, q3 = 0.0;
     double exInt = 0.0, eyInt = 0.0, ezInt = 0.0;
-    const double Kp = 0; // 比例增益
-    const double Ki = 0 ;// 积分增益
+    const double Kp = 2; 
+    const double Ki = 0.05;
     const double alpha = 0.98; // 互补滤波系数
-    const double dt = 0.0025; // 时间差，需要根据实际情况计算或传入
+    const double dt = 2.5; 
 
     double gx = imu_data.angular_velocity_x ;
     double gy = imu_data.angular_velocity_y ;
