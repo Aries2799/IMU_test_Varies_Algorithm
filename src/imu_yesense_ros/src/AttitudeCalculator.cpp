@@ -62,6 +62,10 @@ void AttitudeCalculator::calculateAttitude(const ImuData& imu_data) {
     double ay = imu_data.acc_y;
     double az = imu_data.acc_z;
 
+    double mx = imu_data.magnetic_x;
+    double my = imu_data.magnetic_y;
+    double mz = imu_data.magnetic_z;
+    
     // 归一化加速度计测量值
     double norm = sqrt(ax * ax + ay * ay + az * az);
     ax /= norm;
@@ -110,4 +114,15 @@ void AttitudeCalculator::calculateAttitude(const ImuData& imu_data) {
     latest_attitude.pitch = asin(-2 * q1 * q3 + 2 * q0 * q2) * 180.0 / M_PI;
     latest_attitude.roll = atan2(2 * q2 * q3 + 2 * q0 * q1, -2 * q1 * q1 - 2 * q2 * q2 + 1) * 180.0 / M_PI;
     latest_attitude.yaw = atan2(2 * (q1 * q2 + q0 * q3), q0 * q0 + q1 * q1 - q2 * q2 - q3 * q3) * 180.0 / M_PI;
+
+    //发布原始数据
+    latest_attitude.ax=ax;
+    latest_attitude.ay=ay;
+    latest_attitude.az=az;
+    latest_attitude.gx=gx;
+    latest_attitude.gy=gy;
+    latest_attitude.gz=gz;
+    latest_attitude.mx=mx;
+    latest_attitude.my=my;
+    latest_attitude.mz=mz;
 }

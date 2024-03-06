@@ -6,6 +6,9 @@
 
 struct Attitude {
     double roll, pitch, yaw;
+    double ax,ay,az;
+    double gx,gy,gz;
+    double mx,my,mz;
 };
 
 class AttitudeCalculator {
