@@ -52,7 +52,7 @@ void AttitudeCalculator::calculateAttitude(const ImuData& imu_data) {
     // double dt = elapsed.count();  // 以秒为单位
     // lastUpdateTime = now;
     const double alpha = 0.98; // 互补滤波系数
-    const double dt = 2.5; 
+    const double dt = 0.0025; 
 
     double gx = imu_data.angular_velocity_x ;
     double gy = imu_data.angular_velocity_y ;
