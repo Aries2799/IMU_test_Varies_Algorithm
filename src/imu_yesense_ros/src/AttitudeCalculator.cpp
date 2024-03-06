@@ -1,12 +1,35 @@
+
 #include "AttitudeCalculator.h"
 #include <cmath>
 
-AttitudeCalculator::AttitudeCalculator() : imu_sensor(new ImuSensorYesense()) {
+AttitudeCalculator::AttitudeCalculator() : isFirstUpdate(true) {
+    imu_sensor = new ImuSensorYesense();
     imu_sensor->startWork();
     imu_sensor->onMessageReceived = [this](const ImuData& imu_data) {
+        if (isFirstUpdate) {
+            initializeQuaternion();
+            isFirstUpdate = false;
+            lastUpdateTime = std::chrono::steady_clock::now();
+        }
         this->calculateAttitude(imu_data);
         this->printImuData(imu_data);
     };
+
+    q0 = 1.0; q1 = 0.0; q2 = 0.0; q3 = 0.0;
+    exInt = 0.0; eyInt = 0.0; ezInt = 0.0;
+    Kp = 2.0; Ki = 0.05;
+}
+
+
+void AttitudeCalculator::printImuData(const ImuData& imu_data) const {
+    timespec timestamp;
+    clock_gettime(CLOCK_MONOTONIC, &timestamp);
+    // std::cout << "++++++++++++++  " << timestamp.tv_sec << "." << timestamp.tv_nsec << "   ++++++++++++++" << std::endl;
+    // std::cout << "acc              " << imu_data.acc_x << ", " << imu_data.acc_y << ", " << imu_data.acc_z << std::endl;
+    // std::cout << "angular_velocity " << imu_data.angular_velocity_x << ", " << imu_data.angular_velocity_y << ", " << imu_data.angular_velocity_z << std::endl;
+}
+void AttitudeCalculator::initializeQuaternion() {
+
 }
 
 AttitudeCalculator::~AttitudeCalculator() {
@@ -18,11 +41,16 @@ Attitude AttitudeCalculator::getLatestAttitude() const {
 }
 
 void AttitudeCalculator::calculateAttitude(const ImuData& imu_data) {
-    
-    double q0 = 1.0, q1 = 0.0, q2 = 0.0, q3 = 0.0;
-    double exInt = 0.0, eyInt = 0.0, ezInt = 0.0;
-    const double Kp = 2; 
-    const double Ki = 0.05;
+    // if (isFirstUpdate) {
+    //     lastUpdateTime = std::chrono::steady_clock::now();
+    //     isFirstUpdate = false;
+    //     return; 
+    // }
+
+    // auto now = std::chrono::steady_clock::now();
+    // std::chrono::duration<double> elapsed = now - lastUpdateTime;
+    // double dt = elapsed.count();  // 以秒为单位
+    // lastUpdateTime = now;
     const double alpha = 0.98; // 互补滤波系数
     const double dt = 2.5; 
 
@@ -82,13 +110,4 @@ void AttitudeCalculator::calculateAttitude(const ImuData& imu_data) {
     latest_attitude.pitch = asin(-2 * q1 * q3 + 2 * q0 * q2) * 180.0 / M_PI;
     latest_attitude.roll = atan2(2 * q2 * q3 + 2 * q0 * q1, -2 * q1 * q1 - 2 * q2 * q2 + 1) * 180.0 / M_PI;
     latest_attitude.yaw = atan2(2 * (q1 * q2 + q0 * q3), q0 * q0 + q1 * q1 - q2 * q2 - q3 * q3) * 180.0 / M_PI;
-}
-
-
-void AttitudeCalculator::printImuData(const ImuData& imu_data) const {
-    timespec timestamp;
-    clock_gettime(CLOCK_MONOTONIC, &timestamp);
-    // std::cout << "++++++++++++++  " << timestamp.tv_sec << "." << timestamp.tv_nsec << "   ++++++++++++++" << std::endl;
-    // std::cout << "acc              " << imu_data.acc_x << ", " << imu_data.acc_y << ", " << imu_data.acc_z << std::endl;
-    // std::cout << "angular_velocity " << imu_data.angular_velocity_x << ", " << imu_data.angular_velocity_y << ", " << imu_data.angular_velocity_z << std::endl;
 }

@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/zxy/Project_IMU/IMU_test/src/imu_yesense_ros/include/AttitudeCalculator.h
+imu_sensor_yesense.h
+/home/zxy/Project_IMU/IMU_test/src/imu_yesense_ros/include/imu_sensor_yesense.h
+chrono
+-
+
+/home/zxy/Project_IMU/IMU_test/src/imu_yesense_ros/include/imu_sensor_yesense.h
+rs232_toolkit.h
+/home/zxy/Project_IMU/IMU_test/src/imu_yesense_ros/include/rs232_toolkit.h
+thread
+-
+functional
+-
+
+/home/zxy/Project_IMU/IMU_test/src/imu_yesense_ros/include/rs232_toolkit.h
+sys/types.h
+-
+sys/stat.h
+-
+fcntl.h
+-
+inttypes.h
+-
+
+/home/zxy/Project_IMU/IMU_test/src/imu_yesense_ros/src/AttitudeCalculator.cpp
+AttitudeCalculator.h
+/home/zxy/Project_IMU/IMU_test/src/imu_yesense_ros/src/AttitudeCalculator.h
+cmath
+-
+
