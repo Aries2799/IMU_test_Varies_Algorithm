@@ -1,44 +1,68 @@
-#include "ros/ros.h"
-#include "imu_yesense_ros/attitude.h" 
-#include "imu_yesense_ros/ImuExtended.h" 
+#include <ros/ros.h>
+#include <sensor_msgs/Imu.h>
+#include <iostream>
+#include <stdlib.h>
+#include <unistd.h>
+#include <time.h>
+#include "imu_sensor_yesense.h"
+#include "imu_yesense_ros/ImuExtended.h"
+#include "Fusion.h"
 
-#include "AttitudeCalculator.h"
-
-int main(int argc, char **argv) {
-    ros::init(argc, argv, "attitude_publisher");
+int main(int argc, char **argv){
+    ros::init(argc, argv, "imu_publisher");
     ros::NodeHandle nh;
 
-    AttitudeCalculator calculator; 
-    ros::Rate loop_rate(100); 
-    ros::Publisher attitude_pub = nh.advertise<imu_yesense_ros::attitude>("attitude", 1000);
     ros::Publisher imu_pub = nh.advertise<imu_yesense_ros::ImuExtended>("imu_extended_data", 1000);
-    
-    while (ros::ok()) {
-        Attitude latestAttitude = calculator.getLatestAttitude();
+    int count = 0;
+    timespec timestamp;
+    ImuSensorYesense* imu_sensor = new ImuSensorYesense;
+    imu_sensor->startWork();
 
-        imu_yesense_ros::ImuExtended imu_extended_msg;
-        imu_extended_msg.header.stamp = ros::Time::now();
-        imu_extended_msg.header.frame_id = "imu_link"; 
-        
-        imu_extended_msg.acc_x = latestAttitude.ax;
-        imu_extended_msg.acc_y = latestAttitude.ay;
-        imu_extended_msg.acc_z = latestAttitude.az;
-        imu_extended_msg.angular_velocity_x = latestAttitude.gx;
-        imu_extended_msg.angular_velocity_y = latestAttitude.gy;
-        imu_extended_msg.angular_velocity_z = latestAttitude.gz;
-        imu_extended_msg.magnetic_x = latestAttitude.mx; 
-        imu_extended_msg.magnetic_y = latestAttitude.my;
-        imu_extended_msg.magnetic_z = latestAttitude.mz;
+    // AHRS initialization
+    FusionAhrs ahrs;
+    FusionAhrsInitialise(&ahrs);
+    const float samplePeriod = 0.01f; // Set your actual sample period here
 
-        imu_pub.publish(imu_extended_msg);
+    imu_sensor->onMessageReceived = [&](ImuData imu_data){
+        if(count % 1 == 0){
+            clock_gettime(CLOCK_MONOTONIC, &timestamp);
 
-        imu_yesense_ros::attitude msg;
-        msg.roll = latestAttitude.roll;
-        msg.pitch = latestAttitude.pitch;
-        msg.yaw = latestAttitude.yaw;
+            // Fusion algorithm update
+            FusionVector gyroscope = {imu_data.angular_velocity_x, imu_data.angular_velocity_y, imu_data.angular_velocity_z}; // Assuming degrees/s
+            FusionVector accelerometer = {imu_data.acc_x, imu_data.acc_y, imu_data.acc_z}; // Assuming g
+            FusionAhrsUpdateNoMagnetometer(&ahrs, gyroscope, accelerometer, samplePeriod);
+            FusionEuler euler = FusionQuaternionToEuler(FusionAhrsGetQuaternion(&ahrs));
 
-        attitude_pub.publish(msg);
+            imu_yesense_ros::ImuExtended imu_extended_msg;
 
+            imu_extended_msg.header.stamp = ros::Time::now();
+            imu_extended_msg.header.frame_id = "imu_link";
+
+            // Original IMU data
+            imu_extended_msg.acc_x = imu_data.acc_x;
+            imu_extended_msg.acc_y = imu_data.acc_y;
+            imu_extended_msg.acc_z = imu_data.acc_z;
+            imu_extended_msg.angular_velocity_x = imu_data.angular_velocity_x;
+            imu_extended_msg.angular_velocity_y = imu_data.angular_velocity_y;
+            imu_extended_msg.angular_velocity_z = imu_data.angular_velocity_z;
+            imu_extended_msg.magnetic_x = imu_data.magnetic_x; 
+            imu_extended_msg.magnetic_y = imu_data.magnetic_y;
+            imu_extended_msg.magnetic_z = imu_data.magnetic_z;
+
+            // Adding Euler angles from AHRS
+            imu_extended_msg.roll = euler.angle.roll;
+            imu_extended_msg.pitch = euler.angle.pitch;
+            imu_extended_msg.yaw = euler.angle.yaw;
+
+            imu_pub.publish(imu_extended_msg);
+
+            std::cout << "Published IMU Extended data" << std::endl;
+        }
+        count++;
+    };
+
+    ros::Rate loop_rate(10); // Or set to actual loop rate based on your sensor's configuration
+    while(ros::ok()){
         ros::spinOnce();
         loop_rate.sleep();
     }

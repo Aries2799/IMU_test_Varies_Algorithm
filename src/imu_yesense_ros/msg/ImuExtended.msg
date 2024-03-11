@@ -8,3 +8,6 @@ float64 angular_velocity_z
 float64 magnetic_x
 float64 magnetic_y
 float64 magnetic_z
+float64 roll
+float64 pitch
+float64 yaw

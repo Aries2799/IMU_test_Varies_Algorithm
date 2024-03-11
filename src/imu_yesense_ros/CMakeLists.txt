@@ -18,7 +18,7 @@ find_package(catkin REQUIRED COMPONENTS
 add_message_files(
   FILES
   ImuExtended.msg
-  attitude.msg
+
 )
 
 generate_messages(
@@ -40,12 +40,19 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
+include_directories(
+    ${PROJECT_SOURCE_DIR}/src
+    ${PROJECT_SOURCE_DIR}/src/Fusion
+)
+
 ## 声明可执行文件
 add_executable(${PROJECT_NAME}_node 
-src/AttitudeCalculator.cpp 
 src/imu_sensor_yesense.cpp 
 src/rs232_toolkit.cpp
 src/main.cpp
+src/Fusion/FusionAhrs.c
+src/Fusion/FusionCompass.c
+src/Fusion/FusionOffset.c
 )
 
 ## 添加cmake目标依赖
