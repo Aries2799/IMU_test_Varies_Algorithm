@@ -76,5 +76,6 @@
         "valarray": "cpp",
         "variant": "cpp",
         "bit": "cpp"
-    }
+    },
+    "cmake.sourceDirectory": "C:/Users/zxy/Desktop/IMU_test/src"
 }
