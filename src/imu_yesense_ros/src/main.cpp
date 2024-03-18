@@ -24,14 +24,14 @@ int main(int argc, char **argv){
 
     float samplePeriod; 
     timespec last_timestamp;
-    bool first_measurement = true; // 用于标记是否是第一次测量
+    bool first_measurement = true; 
 
     imu_sensor->onMessageReceived = [&](ImuData imu_data){
         if(count % 1 == 0){
             timespec current_timestamp;
             clock_gettime(CLOCK_MONOTONIC, &current_timestamp);
 
-            // 计算samplePeriod
+
             if (!first_measurement) {
                 float delta_t = (current_timestamp.tv_sec - last_timestamp.tv_sec) 
                             + (current_timestamp.tv_nsec - last_timestamp.tv_nsec) / 1000000000.0f;
@@ -40,7 +40,6 @@ int main(int argc, char **argv){
                 first_measurement = false;
             }
 
-            // 更新上一次的时间戳
             last_timestamp = current_timestamp;
             // Fusion algorithm update
             FusionVector gyroscope = {imu_data.angular_velocity_x, imu_data.angular_velocity_y, imu_data.angular_velocity_z}; // Assuming degrees/s
