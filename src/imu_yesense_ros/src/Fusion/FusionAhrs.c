@@ -47,7 +47,7 @@ void FusionAhrsInitialise(FusionAhrs *const ahrs) {
     const FusionAhrsSettings settings = {
             .convention = FusionConventionNwu,
             .gain = 0.5f,
-            .gyroscopeRange = 0.0f,
+            .gyroscopeRange = 2000.0f,
             .accelerationRejection = 90.0f,
             .magneticRejection = 90.0f,
             .recoveryTriggerPeriod = 0,

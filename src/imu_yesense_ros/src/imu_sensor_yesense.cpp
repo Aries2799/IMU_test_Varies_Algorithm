@@ -56,9 +56,9 @@ int ImuSensorYesense::set_imu_data(YesenseFrame& frame){
   imu_data_.magnetic_x             = frame.data.angle.y / factor;
   imu_data_.magnetic_y            = frame.data.angle.x / factor;
   imu_data_.magnetic_z              = frame.data.angle.z / factor;
-  imu_data_.angular_velocity_x  = frame.data.angle_v.x / factor * rad;
-  imu_data_.angular_velocity_y = frame.data.angle_v.y / factor * rad;
-  imu_data_.angular_velocity_z   = frame.data.angle_v.z / factor * rad;
+  imu_data_.angular_velocity_x  = frame.data.angle_v.x / factor * 1;
+  imu_data_.angular_velocity_y = frame.data.angle_v.y / factor * 1;
+  imu_data_.angular_velocity_z   = frame.data.angle_v.z / factor * 1;
   imu_data_.acc_x                  = frame.data.acc.x / factor;
   imu_data_.acc_y                  = frame.data.acc.y / factor;
   imu_data_.acc_z                  = frame.data.acc.z / factor;

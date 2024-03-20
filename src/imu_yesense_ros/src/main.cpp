@@ -43,8 +43,9 @@ int main(int argc, char **argv){
             last_timestamp = current_timestamp;
             // Fusion algorithm update
             FusionVector gyroscope = {imu_data.angular_velocity_x, imu_data.angular_velocity_y, imu_data.angular_velocity_z}; // Assuming degrees/s
-            FusionVector accelerometer = {imu_data.acc_x, imu_data.acc_y, imu_data.acc_z}; // Assuming g
-            FusionAhrsUpdateNoMagnetometer(&ahrs, gyroscope, accelerometer, samplePeriod);
+            FusionVector accelerometer = {imu_data.acc_x, imu_data.acc_y, imu_data.acc_z}; 
+            FusionVector magnetometer = {imu_data.magnetic_x, imu_data.magnetic_y, imu_data.magnetic_z}; 
+            FusionAhrsUpdate(&ahrs, gyroscope, accelerometer,magnetometer, samplePeriod);
             FusionEuler euler = FusionQuaternionToEuler(FusionAhrsGetQuaternion(&ahrs));
 
             imu_yesense_ros::ImuExtended imu_extended_msg;
@@ -76,7 +77,7 @@ int main(int argc, char **argv){
         count++;
     };
 
-    ros::Rate loop_rate(10); // Or set to actual loop rate based on your sensor's configuration
+    ros::Rate loop_rate(400); // Or set to actual loop rate based on your sensor's configuration
     while(ros::ok()){
         ros::spinOnce();
         loop_rate.sleep();
