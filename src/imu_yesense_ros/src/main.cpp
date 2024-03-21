@@ -45,7 +45,7 @@ int main(int argc, char **argv){
             FusionVector gyroscope = {imu_data.angular_velocity_x, imu_data.angular_velocity_y, imu_data.angular_velocity_z}; // Assuming degrees/s
             FusionVector accelerometer = {imu_data.acc_x, imu_data.acc_y, imu_data.acc_z}; 
             FusionVector magnetometer = {imu_data.magnetic_x, imu_data.magnetic_y, imu_data.magnetic_z}; 
-            FusionAhrsUpdate(&ahrs, gyroscope, accelerometer,magnetometer, samplePeriod);
+            FusionAhrsUpdateNoMagnetometer(&ahrs, gyroscope, accelerometer, samplePeriod);
             FusionEuler euler = FusionQuaternionToEuler(FusionAhrsGetQuaternion(&ahrs));
 
             imu_yesense_ros::ImuExtended imu_extended_msg;
